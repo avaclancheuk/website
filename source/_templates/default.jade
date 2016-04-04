@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+
+  block settings
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='initial-scale=1')
+    title Avalanche UK
+    style
+      include:stylus(compress=true) ../stylus/_index.styl
+
+  body(class=bodyClass || null)
+    block content

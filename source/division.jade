@@ -1,0 +1,12 @@
+extends _templates/default
+
+block settings
+  - var bodyClass = 'is-division'
+
+block content
+  - var n = 0
+  while n < 12
+    - n++
+    .grid(class='grid--' + n)
+      .grid__container
+        include img/_logo.svg

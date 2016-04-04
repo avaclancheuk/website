@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+node_js:
+  - 0.1
+  - 0.12
+  - 4
+env:
+  global:
+    - GH_REF: github.com:benedfit/avalancheuk.git
+    - secure: itktIR/oBUpNWdO4drfGuAV5Otu8uRgYsLKDePbCBXDC7OCKIJBx5mPzSyV54RGso07HkD4wCN2UbT2HagcfZNaoIKcqCIVk0TL2E3pEhQpDal46jQhcfH8lmRgTr2po1E/4mHp0gOSaPQ52QMFfTKGTYrmPBmEBgoN2mYZeSqt0nIIUV5dLOO55MA1xkWvzr5yZdm+zDt+47LTk1Av7E+MTlIK/LmnlWWH7BL8wndHCLgd8TiDwjEG4MXbRM23z6qLyIQRlGhSvayyCQCgqWgDPucp4Er1uHsfdrJuIKxssIQVNBijFf8S4cUrF210CRzKqnzTUCeqWkOC036fkw00Apih12XqJmt56bqnygp/5VSrZqXcJ6pQ6qN4Ay55WbAj4VXtMgXdrRmprCreO03pxpq+BQSEj5eYAmgrEbyd+r2OKDRF+7VA1iymESNzvkfi1l1iR0CY6r0GwQqLQcRKdCHMiCejTMjMWJQtPdLTv3EB8DbbRJ8fah4EkcqqcBZzvrzaS1ujTMcweJIot1FFy4TZAfMtDRgmfwdtH1sAJ8aHzcpWuj7qP+OSBP9Os2jjybwQgXwkkELqQgztIgcwdbBe4DbDvfd7kMHlW0y4s9g2AKvchGsxMYLvQUxSIREPh/hI1qCOdIm5C6UEgnS9Fld29kYYK028iXXghVCE=
+after_success:
+  - npm run build
+  - npm run deploy
+notifications:
+  email:
+    on_success: never
