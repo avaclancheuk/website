@@ -8,11 +8,9 @@ env:
   global:
     - GITHUB_REPO: "benedfit/avalancheuk"
     - secure: dinCMQyvgK/OqVtykRjUWLpnIsXUznqQjNT+NIxsmAcGo+RnpmQ0x6ewEkUExmwUQDp6nMMiFgCI2esG+B31/8HvdqcdJio5ZUpB69SETA2GXUEe2E+dfmyj3O7aJSBTVJE9rHEfOoTJh6MbJQoURsLEhXgAwno5N3vZEvLBKYxHW6BlQwPjL+iKBnxPUyQndSwFaATsTEfxURhwOXNmrrEplOgw2Uv55QrLXP/185ZvfCsilgnzgvwTBe0BfOrbfHfnMxikro4jzHFvAYFGYPpkP6yz8KpvLSrCb4/JKKAeLhMCpnMbQjmrAoqKXhcUBq0xgAWw1kKMFme9BsS5I2hdkirMWBREJE4c7SPiM6S5lvLh93uggg6EvtOaIhAjWKvM4uJt5WbVLZTIoCKO+iniIWyV2q8B16n2gK0LzdJ17jzODovCKGtdXt2C5gQUYtLIzd4L8uj5M5mMFzKa3hR9FiYV/ILEOjTwv5Gb3LN9BeqKINzXYhwWKn537PalOm0yZoNauPR6tL8+MOBHDqFUFMtP9ttp9VXJJsSo6j1BePo1e1tnSaR266CeRkNYXL+dHa2xL9bfxaV2QoZsOA07Ux8faBj5nIKav/PHGRsJ53EB5Xcr98MpSRv3qV1x+L+AZ1zVR7HGqTIb4+qs4J3p1D6QGUne7hWCzTjOWEY=
-deploy:
-  provider: script
-  script: ./deploy.sh
-  on:
-    branch: master
+after_success:
+  - npm run build
+  - npm run deploy
 notifications:
   email:
     on_success: never
