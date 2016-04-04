@@ -13,9 +13,6 @@ body
   margin 0
   text-align center
 
-  &.is-division
-    background-image url('img/body--division.jpg')
-
 a
   -webkit-tap-highlight-color rgba(black, 0)
 
@@ -25,103 +22,6 @@ a
   right 0
   bottom 0
   left 0
-
-.grid
-  $orange = #ff6a13
-  $black = #222
-
-  display inline-block
-  width 50%
-
-  svg
-    height auto
-    max-width 100%
-    padding 1em
-    position relative
-    margin-top 50%
-    transform translateY(-50%)
-
-  .inner
-  .outer
-    transform translateY(20px)
-
-  .inner__type
-    display none
-
-  &.grid--1
-    .inner
-      fill $orange
-
-  &.grid--2
-    .inner
-      fill none
-    .outer
-      fill $orange
-
-  &.grid--3
-    background white
-    .inner
-      fill $orange
-
-  &.grid--4
-    background white
-    .inner
-      fill none
-    .outer
-      fill $orange
-
-  &.grid--5
-    .inner
-      fill white
-
-  &.grid--6
-    .inner
-      fill none
-    .outer
-      fill white
-
-  &.grid--7
-    background $orange
-    .inner
-      fill white
-
-  &.grid--8
-    background $orange
-    .inner
-      fill none
-    .outer
-      fill white
-
-  &.grid--9
-    .inner
-      fill white
-    .outer
-      fill $orange
-
-  &.grid--10
-    .inner
-      fill $orange
-    .outer
-      fill white
-
-  &.grid--11
-    background $black
-    .inner
-      fill white
-    .outer
-      fill $orange
-
-  &.grid--12
-    background $black
-    .inner
-      fill $orange
-    .outer
-      fill white
-
-.grid__container
-  height 0
-  overflow hidden
-  padding-bottom 100%
 
 .logo
   position absolute
@@ -152,3 +52,5 @@ a
 
     .inner
       fill-opacity 0
+
+@import '_division'
