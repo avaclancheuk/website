@@ -4,10 +4,6 @@ node_js:
   - 0.1
   - 0.12
   - 4
-env:
-  global:
-    - GITHUB_REPO: "benedfit/avalancheuk"
-    - secure: iINLUkEuVqG2bGin6EqtAinPyRHze77I+O6bWK/CYpc0TzSpDSCivH6KDX09WND2VTKFgar4e2V/Bg+JdnqZ4VoLSWBAruktdQNv91cz8GucW1R82AtDhGzhCVn8WKvM7VCOUK+A92QQY4wJv7npKMI20Naz+jm5Nfdqal0Ajq/J+TJsjRiADpYbpV0StO/G02h3MkQ+4lGA4sqLJEyoScQO78PumxBCwSetno0Er/Fi/gGR/iFbLn7QIpcN/BbGWIGGJJJSWg/CfY8ctG7nyGRzQ1Brsiz3bbdbQriYHI0cwmX7oTV9RVFlBph88zUxNe1FwtVeEn5QoyqjZncMVMQPqSHschVOCPiqLVWigIccqJHIzv6Pf92o0o1OJrCvOEZPw43li0ZHg6eOQCd/js6jBvrfH0MyOMzpVRv141W0hc1CWD+xpUKB2Y9jsba5U4YhtJZfuxR44Kk2V3miPDaBRdLn5cVddAfhB9LMXY63mFAfJeUhGyqcrR1CV4aVLuJ3Ez7qSz9Ng9lHHYIZUEiosZFD5zjSyIptcFAWNC4ZJr7NmchaUYCp1DbHoaSiLcpB5VOPOA4tqiZqK6mvTPqheCSvBfSB00aBlgsxGEsu5yyQIAPCeRSDhdFrWrAV1b2gzzvquTg7heWKb1uF1wM5qBgrWibmBPL/cRAbK/w=
 after_success:
   - npm run build
   - npm run deploy
