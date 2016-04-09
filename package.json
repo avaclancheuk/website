@@ -18,6 +18,7 @@
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
   "dependencies": {
+    "glob": "^7.0.3",
     "harp": "^0.20.1"
   },
   "devDependencies": {
@@ -30,6 +31,9 @@
     "istanbul": "^0.4.2",
     "jsinspect": "^0.8.0",
     "mocha": "^2.4.5",
-    "pug-lint": "^2.1.6"
+    "pliers": "^1.2.1",
+    "pliers-imagemin": "^3.0.1",
+    "pug-lint": "^2.1.6",
+    "rfg-api": "^0.1.7"
   }
 }
