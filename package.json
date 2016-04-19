@@ -17,6 +17,7 @@
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
   "dependencies": {
+    "any-newer-files": "0.0.4",
     "browser-sync": "^2.12.3",
     "configury": "^0.3.0",
     "glob": "^7.0.3",

@@ -7,6 +7,22 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='initial-scale=1')
     title= title
+
+    - var sizes = [ 57, 60, 72, 76, 114, 120, 144, 152, 180 ]
+    each size in sizes
+      link(rel='apple-touch-icon', href='/img/apple-touch-icon-' + size + 'x' + size + '.png', sizes=size + 'x' + size)
+
+    - sizes = [ 16, 32, 96 ]
+    each size in sizes
+      link(rel='icon', type='image/png', href='/img/favicon-' + size + 'x' + size + '.png', sizes=size + 'x' + size)
+
+    link(rel='icon', type='image/png', href='/img/android-chrome-192x192.png', sizes='192x192')
+    link(rel='manifest', href='/manifest.json')
+    link(rel='mask-icon', href='/img/safari-pinned-tab.svg', color=themeColor)
+    meta(name='msapplication-TileColor', content=themeColor)
+    meta(name='msapplication-TileImage', content='/img/mstile-144x144.png')
+    meta(name='theme-color', content=themeColor)
+
     style
       block stylus
         include:stylus(compress=true) ../stylus/_index.styl

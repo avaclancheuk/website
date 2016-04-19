@@ -1,5 +1,6 @@
 { "globals":
   { "title": "Avalanche UK"
+  , "themeColor": "#ffffff"
   , "src": "source"
   , "dest": "_output"
   }
