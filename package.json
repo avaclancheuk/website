@@ -5,21 +5,23 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "start": "harp server ./source",
-    "build": "harp compile ./source ./_output",
+    "start": "pliers go -o",
     "deploy": "bash ./deploy.sh",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "lintJs": "eslint -f unix .",
     "lintJade": "pug-lint .",
     "inspect": "jsinspect .",
     "depcheck": "david",
-    "pretest": "npm run build && npm run lintJs && npm run inspect && npm run lintJade && npm run depcheck",
+    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintJade && npm run depcheck",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
   "dependencies": {
+    "browser-sync": "^2.12.3",
+    "configury": "^0.3.0",
     "glob": "^7.0.3",
-    "harp": "^0.20.1"
+    "harp": "^0.20.1",
+    "rfg-api": "^0.1.7"
   },
   "devDependencies": {
     "david": "^7.0.1",
@@ -33,7 +35,6 @@
     "mocha": "^2.4.5",
     "pliers": "^1.2.1",
     "pliers-imagemin": "^3.0.1",
-    "pug-lint": "^2.1.6",
-    "rfg-api": "^0.1.7"
+    "pug-lint": "^2.1.6"
   }
 }

@@ -1,4 +1,6 @@
 { "globals":
   { "title": "Avalanche UK"
+  , "src": "source"
+  , "dest": "_output"
   }
 }

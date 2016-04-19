@@ -1,7 +1,7 @@
 module.exports = createFileset
 
-function createFileset (pliers) {
+function createFileset (pliers, config) {
 
-  pliers.filesets('images', __dirname + '/../../source/img/**/*.{gif,jpg,jpeg,png,svg}')
+  pliers.filesets('images', __dirname + '/../../' + config.src + '/img/**/*.{gif,jpg,jpeg,png,svg}')
 
 }
