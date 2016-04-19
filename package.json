@@ -10,9 +10,10 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "lintJs": "eslint -f unix .",
     "lintJade": "pug-lint .",
+    "lintStylus": "stylint .",
     "inspect": "jsinspect .",
     "depcheck": "david",
-    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintJade && npm run depcheck",
+    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintJade && npm run depcheck",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
@@ -36,6 +37,7 @@
     "mocha": "^2.4.5",
     "pliers": "^1.2.1",
     "pliers-imagemin": "^3.0.1",
-    "pug-lint": "^2.1.6"
+    "pug-lint": "^2.1.6",
+    "stylint": "^1.3.8"
   }
 }
