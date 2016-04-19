@@ -27,7 +27,7 @@ function createTask (pliers, config) {
     request = rfg.createRequest(
       { apiKey: apiKey
       , masterPicture: sourceFile
-      , iconsPath: '/'
+      , iconsPath: '/img/'
       , design:
         { ios: { pictureAspect: 'noChange' }
         , desktopBrowser: {}
