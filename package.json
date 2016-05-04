@@ -21,6 +21,7 @@
   "dependencies": {
     "any-newer-files": "0.0.4",
     "browser-sync": "^2.12.3",
+    "cloudflare-cli": "^1.5.2",
     "configury": "^0.3.0",
     "glob": "^7.0.3",
     "harp": "^0.20.1",
