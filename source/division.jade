@@ -3,6 +3,9 @@ extends _templates/default
 block settings
   - var bodyClass = 'is-division'
 
+block meta
+  meta(name='robots', content='noindex,nofollow')
+
 block append stylus
   include:stylus(compress=true) stylus/_division.styl
 
