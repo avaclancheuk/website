@@ -1,12 +1,23 @@
 extends _templates/default
 
 block content
-  a.wrapper(href='#', tabindex='-1')
-  a.logo(href='#', title=title)
-    svg(width='100%', height='100%')
-      defs
-        lineargradient(id='gradient', x1='0', y1='0', x2='100%', y2='100%', gradientunits='userSpaceOnUse')
-          stop(offset='0', stop-color='#8560a8')
-          stop(offset='30%', stop-color='#5674b9')
-          stop(offset='100%', stop-color='#02fa9c')
-      include img/logo.svg
+  .content
+    h1.site-title.middled
+      include img/logo__text.svg
+
+    .stream.is-offline(id='js-twitch-wrapper')
+      .middled.content-container
+        .aspect-ratio(id='js-twitch-player')
+
+  script(src='//player.twitch.tv/js/embed/v1.js')
+  script
+    :uglify-js
+      var player = new Twitch.Player('js-twitch-player', { channel: 'avaclancheuk' })
+        , wrapper = document.getElementById('js-twitch-wrapper')
+
+      player.addEventListener('online', showPlayer)
+      player.addEventListener('playing', showPlayer)
+
+      function showPlayer() {
+        wrapper.classList.remove('is-offline')
+      }

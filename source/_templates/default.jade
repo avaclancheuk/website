@@ -31,4 +31,9 @@ html(lang='en')
         include:stylus(compress=true) ../stylus/_index.styl
 
   body(class=bodyClass || null)
+    block header
+      .header
+        .content-container
+          include ../img/logo.svg
+
     block content

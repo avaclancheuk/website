@@ -5,6 +5,8 @@ $turquoise = #02fa9c
 $yellow = #ff3
 $white = #fff
 
+@import '_font'
+
 *
   box-sizing border-box
 
@@ -15,48 +17,72 @@ body
   background url('/img/body.jpg') no-repeat 50% 50%
   background-attachment fixed
   background-size cover
+  color $black
+  font-family 'ostrich'
   height 100%
   line-height 0
   margin 0
   text-align center
 
-a
-  -webkit-tap-highlight-color rgba(black, 0)
+.site-title
+  padding 10px
 
-.wrapper
-  position absolute
-  top 0
-  right 0
-  bottom 0
-  left 0
+  svg
+    width 100%
 
-.logo
+  text
+    fill $black
+
+.header
+  background $blue linear-gradient(-225deg, $purple 0, $blue 30%, $turquoise 100%)
+  color $white
+  padding 10px
+  position relative
+  z-index 2
+  text-align left
+
+  svg
+    height 50px
+    width 59px
+
+.content
+  position relative
+  z-index 1
+  height 100%
+  margin-top -70px
+  padding-top 70px
+
+.content-container
+  margin auto
+  max-width 1280px
+
+.aspect-ratio
+  display block
+  overflow hidden
+  height 0
+  padding-bottom ((9 / 16) * 100)%
+  position relative
+
+  iframe
+    border 0
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 100%
+
+.stream
+  background $black
+  border 10px solid $black
+  height 100%
+  position relative
+
+  &.is-offline
+    display none
+
+.middled
   position absolute
   top 50%
-  right 0
-  left 0
-  width 260px
-  height 220px
-  margin -110px auto 0
-  text-decoration none
-  text-transform uppercase
-
-  $fill =
-    fill url(#gradient)
-    transition fill-opacity 1s ease-in-out
-
-  .fill
-  .stroke
-    {$fill}
-
-  .fill
-    fill-opacity 0
-
-  &:hover
-  &:active
-  &:focus
-    .fill
-      fill-opacity 1
-
-    .stroke
-      fill-opacity 0
+  left 50%
+  width 100%
+  transform translate3d(-50%, -50%, 0)
