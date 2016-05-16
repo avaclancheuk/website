@@ -1,5 +1,6 @@
 { "globals":
   { "title": "Avalanche UK"
+  , "description": "A team of parents and adult gamers who've found mutual friendship through Destiny, our goal is to play the games we love with people who share our ethics"
   , "themeColor": "#5674b9"
   , "src": "source"
   , "dest": "_output"
