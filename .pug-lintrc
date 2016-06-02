@@ -1,2 +1,2 @@
-{ "preset": "clock"
+{ "extends": "clock"
 }

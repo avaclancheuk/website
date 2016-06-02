@@ -9,14 +9,14 @@
     "deploy": "bash ./deploy.sh",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "lintJs": "eslint -f unix .",
-    "lintJade": "pug-lint .",
+    "lintPug": "pug-lint .",
     "lintStylus": "stylint .",
     "inspect": "jsinspect .",
     "depcheck": "david",
-    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintJade && npm run depcheck",
+    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug && npm run depcheck",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more",
-    "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintJade"
+    "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug"
   },
   "dependencies": {
     "any-newer-files": "0.0.4",
@@ -40,10 +40,13 @@
     "mocha": "^2.4.5",
     "pliers": "^1.2.1",
     "pliers-imagemin": "^3.0.1",
-    "pug-lint": "^2.1.6",
+    "pug-lint": "^2.2.0",
+    "pug-lint-config-clock": "^1.1.1",
     "stylint": "1.3.8"
   },
   "david": {
-    "ignore": [ "stylint" ]
+    "ignore": [
+      "stylint"
+    ]
   }
 }
