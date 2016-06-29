@@ -1,0 +1,100 @@
+$black = #222
+$blue = #5674b9
+$purple = #8560a8
+$turquoise = #02fa9c
+$white = #fff
+
+.hidden
+  height 0
+  width 0
+
+.grid
+  display inline-block
+  width 50%
+
+  svg
+    height auto
+    max-width 100%
+    padding 1em
+    position relative
+    margin-top 50%
+    transform translateY(-50%)
+
+  .stroke
+  .fill
+    transform translateY(20px)
+
+  &.grid--1
+    .stroke
+      fill url(#gradient)
+
+  &.grid--2
+    .stroke
+      fill none
+    .fill
+      fill url(#gradient)
+
+  &.grid--3
+    background $white
+    .stroke
+      fill url(#gradient)
+
+  &.grid--4
+    background $white
+    .stroke
+      fill none
+    .fill
+      fill url(#gradient)
+
+  &.grid--5
+    .stroke
+      fill $white
+
+  &.grid--6
+    .stroke
+      fill none
+    .fill
+      fill $white
+
+  &.grid--7
+    background $blue linear-gradient(-225deg, $purple 0, $blue 30%, $turquoise 100%)
+    .stroke
+      fill $white
+
+  &.grid--8
+    background $blue linear-gradient(-225deg, $purple 0, $blue 30%, $turquoise 100%)
+    .stroke
+      fill none
+    .fill
+      fill $white
+
+  &.grid--9
+    .stroke
+      fill $white
+    .fill
+      fill url(#gradient)
+
+  &.grid--10
+    .stroke
+      fill url(#gradient)
+    .fill
+      fill $white
+
+  &.grid--11
+    background $black
+    .stroke
+      fill $white
+    .fill
+      fill url(#gradient)
+
+  &.grid--12
+    background $black
+    .stroke
+      fill url(#gradient)
+    .fill
+      fill $white
+
+.grid__container
+  height 0
+  overflow hidden
+  padding-bottom 100%

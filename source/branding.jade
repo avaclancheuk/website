@@ -1,0 +1,24 @@
+extends _templates/default
+
+block meta
+  meta(name='robots', content='noindex,nofollow')
+
+block append stylus
+  include:stylus(compress=true) stylus/_branding.styl
+
+block header
+
+block content
+  svg.hidden
+    defs
+      lineargradient(id='gradient', x1='0', y1='0', x2='100%', y2='100%')
+        stop(offset='0', stop-color='#8560a8')
+        stop(offset='30%', stop-color='#5674b9')
+        stop(offset='100%', stop-color='#02fa9c')
+
+  - var n = 0
+  while n < 12
+    - n++
+    .grid(class='grid--' + n)
+      .grid__container
+        include img/logo.svg
