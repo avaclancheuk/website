@@ -46,6 +46,7 @@
   },
   "david": {
     "ignore": [
+      "eslint",
       "pug-lint-config-clock",
       "stylint"
     ]
