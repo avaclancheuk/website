@@ -16,7 +16,9 @@
     "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug && npm run depcheck",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more",
-    "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug"
+    "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "any-newer-files": "0.0.4",
@@ -25,7 +27,8 @@
     "configury": "^0.3.0",
     "glob": "^7.0.3",
     "harp": "^0.20.1",
-    "rfg-api": "^0.1.7"
+    "rfg-api": "^0.1.7",
+    "snyk": "^1.17.1"
   },
   "devDependencies": {
     "david": "^7.0.1",
@@ -52,5 +55,6 @@
       "pug-lint-config-clock",
       "stylint"
     ]
-  }
+  },
+  "snyk": true
 }
