@@ -4,5 +4,12 @@
   , "themeColor": "#5674b9"
   , "src": "source"
   , "dest": "_output"
+  , "streamers":
+    [ { "name": "oO DECKA Oo", "label": "Twitch", "url": "#" }
+    , { "name": "Diamond Duck", "label": "YouTube", "url": "#" }
+    , { "name": "Kaiser1977", "label": "", "url": "#" }
+    , { "name": "vG Stryker", "label": "", "url": "#" }
+    , { "name": "welshy316", "label": "", "url": "#" }
+    ]
   }
 }

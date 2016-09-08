@@ -13,7 +13,7 @@
     "lintStylus": "stylint .",
     "inspect": "jsinspect .",
     "depcheck": "david",
-    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug && npm run depcheck",
+    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more",
     "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug"
@@ -24,8 +24,10 @@
     "cloudflare-cli": "^1.5.2",
     "configury": "^0.3.0",
     "glob": "^7.0.3",
-    "harp": "^0.20.1",
-    "rfg-api": "^0.1.7"
+    "harp": "^0.20.3",
+    "responsive-grid": "^1.1.0",
+    "rfg-api": "^0.1.7",
+    "stylus-mixins": "^0.3.1"
   },
   "devDependencies": {
     "david": "^7.0.1",

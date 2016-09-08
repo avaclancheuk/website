@@ -1,0 +1,409 @@
+@require '../../node_modules/stylus-mixins'
+@require '../../node_modules/responsive-grid'
+
+$color--black = #222
+$color--blue = #5674b9
+$color--ghost = #f8f8f8
+$color--graphite = #444
+$color--grey = #eee
+$color--grey--dark = darken($color--grey, 10%)
+$color--purple = #8560a8
+$color--silver = #727272
+$color--steel = #666
+$color--turquoise = #02fa9c
+$color--white = #fff
+
+$font--base = 'chalet', sans-serif
+$font--brand = 'ostrich', $font--base
+
+$mq--mobile  = 320px
+$mq--tablet  = 550px
+$mq--desktop = 1024px
+
+$logo--width = 4em
+
+@import '_font'
+
+grid-base()
+grid-gutter-modifier('gutterless', 0)
+grid-widths('', 2 4)
+
+.grid--valign-middle
+  > .grid__item
+    vertical-align middle
+
+*, *:before, *:after
+  box-sizing border-box
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
+  display block
+  margin 0
+  padding 0
+
+html, body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, hr, legend, address, input, button, textarea, blockquote, table, th, td
+  font-size 1em
+  font-weight normal
+  margin 0
+  padding 0
+
+body
+  background $color--black
+  color $color--white
+  font 112.5%/1.5 $font--base
+  -webkit-font-smoothing antialiased
+
+img
+  display block
+  max-width 100%
+
+[data-wipe]
+  border-top 1px solid $color--grey--dark
+  color $color--silver
+  display inline-block
+  margin 0 0.5em
+  position relative
+  padding-top 0.5em
+  text-decoration none
+
+  &:before
+  &:after
+    position absolute
+    left 0
+
+  &:before
+    transition all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+    border-top 2px solid $color--black
+    content ''
+    top -1px
+    width 0
+
+  &:after
+    transition all 0.4s cubic-bezier(0.19, 1, 0.22, 1)
+    color $color--black
+    content attr(data-wipe)
+    height 100%
+    top 0.5em
+    width 0
+    overflow hidden
+
+  &:hover
+    color $color--black
+
+    &:before
+      width 100%
+
+    &:after
+      -webkit-clip-path inset(0 0 0 0)
+      clip-path inset(0 0 0 0)
+
+  @supports (-webkit-clip-path: inset(0))
+    &:after
+      -webkit-clip-path inset(0 99.999% 0 0)
+      width 100%
+
+    &:hover
+      color inherit
+
+  @supports (clip-path: inset(0))
+    &:after
+      clip-path inset(0 99.999% 0 0)
+      width 100%
+
+    &:hover
+      color inherit
+
+.logo
+  display block
+  padding 0.25em
+  width $logo--width
+
+.logo__container
+  height 0
+  overflow hidden
+  padding-bottom ratio-percentage(1, 1)
+  position relative
+
+  svg
+    position absolute
+    height 100%
+    width 100%
+
+.content
+  background $color--white
+  color $color--black
+
+.content-container
+  margin auto
+  max-width 70em
+  padding 0 1em
+
+.content-narrow
+  margin auto
+  max-width 55em
+
+.site-title
+  fill $color--black
+  font-family $font--brand
+  font-weight bold
+  position absolute
+  text-align center
+  top 50%
+  transform translateY(-50%)
+  width 100%
+
+  svg
+    max-width 90%
+
+.site-strapline
+  float left
+  text-align left
+  margin-left 2em
+
+  &:before
+    background red
+    content ''
+    display inline-block
+    height 10px
+    width 300px
+
+.site-introduction
+  padding 5em 0
+  text-align center
+
+  p
+    font-size 1.5em
+    margin-bottom 1em
+
+.header
+  background $color--white
+  background alpha($color--white, 0.95)
+  color $color--black
+  position fixed
+  z-index 1000
+  width 100%
+
+.header--faux
+  background $color--white
+  height ($logo--width + 2em)
+  position static
+  z-index auto
+
+.header__grid--fixed
+  margin-right -($logo--width)
+  width $logo--width
+
+.header__grid--flexible
+  padding-left $logo--width !important // @stylint ignore
+  text-align right
+
+.textblock
+  background $color--white no-repeat 50% 50%
+  background-size cover
+  display block
+  height 20em
+  overflow hidden
+  text-align center
+
+  p
+    margin-bottom 1em
+
+.textblock--transparent
+  background-color transparent
+
+.textblock--alternate
+  background-color $color--graphite
+  color $color--white
+
+  .heading:before
+    background-color $color--white !important // @stylint ignore
+
+.textblock--breakout
+  margin-top 10em
+
+.textblock__content
+  color inherit
+  display block
+  padding 2.5em
+  position relative
+  text-decoration none
+  top 50%
+  transform translateY(-50%)
+
+.brand-banner
+  background url('/img/body.jpg') no-repeat 50% 50%
+  background-size cover
+  height 20em
+  position relative
+
+.brand-fixed
+  background-attachment fixed !important // @stylint ignore
+
+.brand-gradient
+  background $color--blue linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+  color $color--white
+
+  .heading:before
+    background-color $color--white !important // @stylint ignore
+
+.brand-triangles
+  $height = 10em
+  $width = ($height * sin(30deg)) / sin(60deg)
+  $border-color = $color--grey--dark
+  $background-color = $color--grey
+
+  background linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / -2)
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / 2)
+    , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
+  background-size $width $height
+
+.brand-breakout
+  position relative
+
+  &:before
+  &:after
+    content ''
+    position absolute
+    background $color--white
+    height 5em
+    width 100%
+    z-index 1
+
+  &:after
+    top 5em
+
+  > *
+    position relative
+    z-index 2
+
+.brand-breakout--half
+  &:after
+    display none
+
+.footer
+  padding-bottom 2em
+
+.button
+  color $color--black
+  display inline-block
+  margin 1em
+  position relative
+  padding 0.75em 2.75em 0.75em 0
+  text-align center
+
+  &:before
+    content ''
+    border 1px solid $color--black
+    position absolute
+    height 100%
+    width 100%
+    top 0
+    left 0
+    transform scaleX(1)
+    transition transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+  &:hover
+    &:before
+      transform scaleX(1.1)
+
+    .button__text
+      opacity 1
+
+      &:before
+        transform scaleX(1)
+
+.button__text
+  display inline-block
+  opacity 0.95
+
+  &:before
+    content ''
+    display inline-block
+    background $color--black
+    margin 0 0.25em 0 0.75em
+    height 1px
+    width 1.75em
+    vertical-align middle
+    transform scaleX(0)
+    transform-origin left
+    transition all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.button--alt
+  color $color--ghost
+
+  &:before
+    border-color $color--ghost
+
+  .button__text:before
+    background $color--ghost
+
+.section-header
+  background-color $color--white
+  margin-bottom -5em
+  padding 6em 2em
+  text-align center
+
+.heading
+  display inline-block
+  font-size 1.25em
+  font-weight bold
+  margin 0.8em 0
+  margin-left -1.75em
+
+  &:before
+    content ''
+    display inline-block
+    background $color--black
+    margin-right 0.5em
+    height 1px
+    width 1.25em
+    vertical-align middle
+
+.member
+  background $color--graphite 50% 50%
+  background-size 100% 100%
+  color $color--white
+  display block
+  height 0
+  padding-bottom 100%
+  position relative
+  text-decoration none
+  transition all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &:before
+    content ''
+    background-color rgba($color--black, 0)
+    position absolute
+    height 100%
+    width 100%
+    transition all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &:hover
+    background-size 115% 115%
+
+    &:before
+      background-color rgba($color--black, 0.5)
+
+    .member__content
+      opacity 1
+
+.member__content
+  opacity 0
+  padding 1em
+  position absolute
+  width 100%
+  top 50%
+  transform translateY(-50%)
+  text-align center
+
+.member__name
+  font-family $font--brand
+  font-size 2em
+  line-height 1
+
+.member__label
+  border-top 1px solid $color--ghost
+  font-size 0.8em
+  margin-top 0.5em
+  padding-top 0.5em
