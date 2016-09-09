@@ -16,17 +16,36 @@ $color--white = #fff
 $font--base = 'chalet', sans-serif
 $font--brand = 'ostrich', $font--base
 
-$mq--mobile  = 320px
-$mq--tablet  = 550px
-$mq--desktop = 1024px
+$mq--mobile--portrait  = 320px
+$mq--mobile--landscape = 420px
+$mq--tablet--portrait  = 515px
+$mq--tablet--landscape = 768px
+$mq--desktop--small    = 1024px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+$mq--mobile  = $mq--mobile--portrait
+$mq--fablet  = $mq--tablet--portrait
+$mq--tablet  = $mq--tablet--landscape
+$mq--desktop = $mq--desktop--small
 
 $logo--width = 4em
 
 @import '_font'
 
 grid-base()
+grid-reverse()
 grid-gutter-modifier('gutterless', 0)
-grid-widths('', 2 4)
+// grid-widths('', 0)
+
++width-min($mq--fablet)
+  grid-widths('fablet', 2)
+
++width-min($mq--tablet)
+  grid-widths('tablet', 2)
+
++width-min($mq--desktop)
+  grid-widths('desktop', 2 4)
 
 .grid--valign-middle
   > .grid__item
@@ -137,6 +156,9 @@ img
   max-width 70em
   padding 0 1em
 
+  +width-min($mq--tablet)
+    padding 0 2em
+
 .content-narrow
   margin auto
   max-width 55em
@@ -154,25 +176,20 @@ img
   svg
     max-width 90%
 
-.site-strapline
-  float left
-  text-align left
-  margin-left 2em
-
-  &:before
-    background red
-    content ''
-    display inline-block
-    height 10px
-    width 300px
-
 .site-introduction
-  padding 5em 0
+  padding 3em 0
   text-align center
 
   p
-    font-size 1.5em
+    font-size 1.25em
     margin-bottom 1em
+
+  +width-min($mq--tablet)
+    p
+      font-size 1.5em
+
+  +width-min($mq--desktop)
+    padding 5em 0
 
 .header
   background $color--white
@@ -197,18 +214,16 @@ img
   text-align right
 
 .textblock
-  background $color--white no-repeat 50% 50%
+  background $color--white no-repeat 100% 100%
   background-size cover
   display block
-  height 20em
-  overflow hidden
   text-align center
 
   p
     margin-bottom 1em
 
-.textblock--transparent
-  background-color transparent
+  +width-min($mq--desktop)
+    height 20em
 
 .textblock--alternate
   background-color $color--graphite
@@ -218,7 +233,14 @@ img
     background-color $color--white !important // @stylint ignore
 
 .textblock--breakout
-  margin-top 10em
+  +width-min($mq--tablet)
+    margin-top 5em
+
+  +width-min($mq--desktop)
+    margin-top 10em
+
+.textblock--image
+  height 20em
 
 .textblock__content
   color inherit
@@ -226,14 +248,19 @@ img
   padding 2.5em
   position relative
   text-decoration none
-  top 50%
-  transform translateY(-50%)
+
+  +width-min($mq--desktop)
+    top 50%
+    transform translateY(-50%)
 
 .brand-banner
-  background url('/img/body.jpg') no-repeat 50% 50%
+  background $color--white url('/img/body.jpg') no-repeat 50% 50%
   background-size cover
-  height 20em
+  height 10em
   position relative
+
+  +width-min($mq--tablet)
+    height 20em
 
 .brand-fixed
   background-attachment fixed !important // @stylint ignore
@@ -277,12 +304,9 @@ img
     position relative
     z-index 2
 
-.brand-breakout--half
-  &:after
-    display none
-
-.footer
-  padding-bottom 2em
+// .brand-breakout--half
+//   &:after
+//     display none
 
 .button
   color $color--black
@@ -361,49 +385,97 @@ img
     vertical-align middle
 
 .member
-  background $color--graphite 50% 50%
-  background-size 100% 100%
+  background $color--graphite
   color $color--white
   display block
   height 0
+  overflow hidden
   padding-bottom 100%
   position relative
   text-decoration none
-  transition all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)
 
   &:before
     content ''
-    background-color rgba($color--black, 0)
+    background-color $color--black
+    opacity 0
     position absolute
     height 100%
     width 100%
-    transition all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)
+    z-index 2
+    transition opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)
 
   &:hover
-    background-size 115% 115%
-
     &:before
-      background-color rgba($color--black, 0.5)
+      opacity 0.75
+
+    .member__image
+      transform scale(1.15)
 
     .member__content
+      &:before
+        width 90%
+        width calc(100% - 2em)
+
+    .member__detail
       opacity 1
+      transform translate3d(0, 0, 0)
+
+.member--alt
+    background-color $color--steel
+
+.member__image
+  display block
+  position relative
+  z-index 1
+  width 100%
+  transform scale(1)
+  transition transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .member__content
-  opacity 0
   padding 1em
   position absolute
   width 100%
   top 50%
   transform translateY(-50%)
   text-align center
+  z-index 3
+
+  &:before
+    content ''
+    background $color--ghost
+    display block
+    position absolute
+    top 50%
+    left 50%
+    transform translate3d(-50%, -50%, 0)
+    margin 0 auto
+    height 1px
+    width 0
+    transition width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s
+
+.member__detail
+  display inline-block
+  opacity 0
+  transition 0.6s all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s
 
 .member__name
+  display block
   font-family $font--brand
   font-size 2em
   line-height 1
+  margin-bottom 0.5em
+  margin-top -0.5em
+  overflow hidden
+
+  .member__detail
+    transform translate3d(0, 0.5em, 0)
 
 .member__label
-  border-top 1px solid $color--ghost
+  display block
   font-size 0.8em
-  margin-top 0.5em
-  padding-top 0.5em
+  line-height 1
+  overflow hidden
+  position relative
+
+  .member__detail
+    transform translate3d(0, -1em, 0)
