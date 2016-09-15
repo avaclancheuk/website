@@ -1,97 +1,76 @@
-$black = #222
-$orange = #ff6a13
-$white = #fff
+$color--black = #222
+$color--orange = #ff6a13
+$color--white = #fff
 
-body.is-division
+body
   background-image url('/img/body--division.jpg')
 
-.grid
-  display inline-block
-  width 50%
-
-  svg
-    height auto
-    max-width 100%
-    padding 1em
-    position relative
-    margin-top 50%
-    transform translateY(-50%)
-
+.grid--1
   .stroke
+    fill $color--orange
+
+.grid--2
+  .stroke
+    fill none
   .fill
-    transform translateY(20px)
+    fill $color--orange
 
-  &.grid--1
-    .stroke
-      fill $orange
+.grid--3
+  background $color--white
+  .stroke
+    fill $color--orange
 
-  &.grid--2
-    .stroke
-      fill none
-    .fill
-      fill $orange
+.grid--4
+  background $color--white
+  .stroke
+    fill none
+  .fill
+    fill $color--orange
 
-  &.grid--3
-    background $white
-    .stroke
-      fill $orange
+.grid--5
+  .stroke
+    fill $color--white
 
-  &.grid--4
-    background $white
-    .stroke
-      fill none
-    .fill
-      fill $orange
+.grid--6
+  .stroke
+    fill none
+  .fill
+    fill $color--white
 
-  &.grid--5
-    .stroke
-      fill $white
+.grid--7
+  background $color--orange
+  .stroke
+    fill $color--white
 
-  &.grid--6
-    .stroke
-      fill none
-    .fill
-      fill $white
+.grid--8
+  background $color--orange
+  .stroke
+    fill none
+  .fill
+    fill $color--white
 
-  &.grid--7
-    background $orange
-    .stroke
-      fill $white
+.grid--9
+  .stroke
+    fill $color--white
+  .fill
+    fill $color--orange
 
-  &.grid--8
-    background $orange
-    .stroke
-      fill none
-    .fill
-      fill $white
+.grid--10
+  .stroke
+    fill $color--orange
+  .fill
+    fill $color--white
 
-  &.grid--9
-    .stroke
-      fill $white
-    .fill
-      fill $orange
+.grid--11
+  background $color--black
+  .stroke
+    fill $color--white
+  .fill
+    fill $color--orange
 
-  &.grid--10
-    .stroke
-      fill $orange
-    .fill
-      fill $white
-
-  &.grid--11
-    background $black
-    .stroke
-      fill $white
-    .fill
-      fill $orange
-
-  &.grid--12
-    background $black
-    .stroke
-      fill $orange
-    .fill
-      fill $white
-
-.grid__container
-  height 0
-  overflow hidden
-  padding-bottom 100%
+.grid--12
+  background $color--black
+  .stroke
+    fill $color--orange
+  .fill
+    fill $color--white

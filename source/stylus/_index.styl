@@ -1,88 +1,561 @@
-$black = #222
-$blue = #5674b9
-$purple = #8560a8
-$turquoise = #02fa9c
-$yellow = #ff3
-$white = #fff
+@require '../../node_modules/stylus-mixins'
+@require '../../node_modules/responsive-grid'
+
+$color--black = #222
+$color--blue = #5674b9
+$color--ghost = #f8f8f8
+$color--graphite = #444
+$color--grey = #eee
+$color--grey--mid = darken($color--grey, 10%)
+$color--grey--dark = darken($color--grey, 30%)
+$color--purple = #8560a8
+$color--silver = #727272
+$color--steel = #666
+$color--turquoise = #02fa9c
+$color--white = #fff
+
+$font--base = 'chalet', sans-serif
+$font--brand = 'ostrich', $font--base
+
+$mq--mobile--portrait  = 320px
+$mq--mobile--landscape = 420px
+$mq--tablet--portrait  = 515px
+$mq--tablet--landscape = 768px
+$mq--desktop--small    = 1024px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+$mq--mobile  = $mq--mobile--portrait
+$mq--fablet  = $mq--tablet--portrait
+$mq--tablet  = $mq--tablet--landscape
+$mq--desktop = $mq--desktop--small
+
+$logo--width = 4em
 
 @import '_font'
 
-*
+grid-base()
+grid-reverse()
+grid-gutter-modifier('gutterless', 0)
+// grid-widths('', 0)
+
++width-min($mq--fablet)
+  grid-widths('fablet', 2)
+
++width-min($mq--tablet)
+  grid-widths('tablet', 2)
+
++width-min($mq--desktop)
+  grid-widths('desktop', 2 4)
+
+.grid--valign-middle
+  > .grid__item
+    vertical-align middle
+
+*, *:before, *:after
   box-sizing border-box
 
-html
-  height 100%
+html, body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, hr, legend, address, input, button, textarea, blockquote, table, th, td
+  font-size 1em
+  font-weight normal
+  margin 0
+  padding 0
 
 body
-  background url('/img/body.jpg') no-repeat 50% 50%
-  background-attachment fixed
-  background-size cover
-  color $black
-  font-family 'ostrich'
-  height 100%
-  line-height 0
-  margin 0
-  text-align center
+  background $color--black
+  color $color--white
+  font 112.5%/1.5 $font--base
+  -webkit-font-smoothing antialiased
 
-.site-title
-  padding 10px
-
-  svg
-    width 100%
-
-  text
-    fill $black
-
-.header
-  background $blue linear-gradient(-225deg, $purple 0, $blue 30%, $turquoise 100%)
-  color $white
-  padding 10px
-  position relative
-  z-index 2
-  text-align left
-
-  svg
-    height 50px
-    width 59px
-
-.content
-  position relative
-  z-index 1
-  height 100%
-  margin-top -70px
-  padding-top 70px
-
-.content-container
-  margin auto
-  max-width 1280px
-
-.aspect-ratio
+img
   display block
-  overflow hidden
+  max-width 100%
+
+$vhidden =
+  position absolute !important // @stylint ignore
+  clip rect(0, 0, 0, 0) !important // @stylint ignore
+  overflow hidden !important // @stylint ignore
+  height 1px !important // @stylint ignore
+  width 1px !important // @stylint ignore
+  padding 0 !important // @stylint ignore
+  margin -1px !important // @stylint ignore
+  border 0 !important // @stylint ignore
+
+.is-vhidden
+  {$vhidden}
+
+.logo
+  color $color--white
+  fill $color--white
+  display block
+  padding 0.25em
+  width $logo--width
+
+.logo--tag
+  fill $color--steel
+  padding 0
+
+  .logo__container
+    padding-bottom ratio-percentage(375, 500)
+
+.logo__container
   height 0
-  padding-bottom ((9 / 16) * 100)%
+  overflow hidden
+  padding-bottom 100%
   position relative
 
-  iframe
-    border 0
+  svg
     position absolute
-    top 0
-    left 0
     height 100%
     width 100%
 
-.stream
-  background $black
-  border 10px solid $black
-  height 100%
+.logo__grid--fixed
+  margin-right -($logo--width)
+  width $logo--width
+
+.logo__grid--flexible
+  padding-left $logo--width !important // @stylint ignore
+  text-align right
+
+.content
+  background $color--white
+  color $color--black
+
+.container
+  margin auto
+  max-width 70em
+  padding 0 1em
+
+  +width-min($mq--tablet)
+    padding 0 2em
+
+.site-title
+  fill $color--black
+  font-family $font--brand
+  font-weight bold
+  position absolute
+  text-align center
+  top 50%
+  transform translateY(-50%)
+  width 100%
+
+  svg
+    max-width 90%
+
+.site-introduction
+  padding 3em 0
+  margin auto
+  max-width 55em
+  text-align center
+
+  +width-min($mq--desktop)
+    padding 5em 0
+
+  h1, p
+    font-size 1.25em
+    margin-bottom 1em
+
+    +width-min($mq--tablet)
+      font-size 1.5em
+
+  h1
+    font-weight bold
+
+.header
+  background $color--white
+  background alpha($color--white, 0.95)
+  color $color--black
+  position fixed
+  z-index 1000
+  width 100%
+
+.header--faux
+  background $color--white
+  height ($logo--width + 2em)
+  position static
+  z-index auto
+
+.header__link
+  border-top 1px solid $color--grey--mid
+  color $color--steel
+  display inline-block
+  margin-left 1em
+  position relative
+  padding-top 0.5em
+  text-decoration none
+
+  &:before
+  &:after
+    position absolute
+    left 0
+
+  &:before
+    transition all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+    border-top 2px solid $color--black
+    content ''
+    top -1px
+    width 0
+
+  &:after
+    transition all 0.4s cubic-bezier(0.19, 1, 0.22, 1)
+    color $color--black
+    content attr(data-wipe)
+    height 100%
+    top 0.5em
+    width 0
+    overflow hidden
+
+  &:hover
+  &:focus
+    color $color--black
+    outline 0
+
+    &:before
+      width 100%
+
+    &:after
+      -webkit-clip-path inset(0 0 0 0)
+      clip-path inset(0 0 0 0)
+
+  @supports (-webkit-clip-path: inset(0))
+    &:after
+      -webkit-clip-path inset(0 99.999% 0 0)
+      width 100%
+
+    &:hover
+    &:focus
+      color inherit
+
+  @supports (clip-path: inset(0))
+    &:after
+      clip-path inset(0 99.999% 0 0)
+      width 100%
+
+    &:hover
+    &:focus
+      color inherit
+
+.textblock
+  background $color--white no-repeat 100% 100%
+  background-size cover
+  display block
+  text-align center
+
+  p
+    margin-bottom 1em
+
+  +width-min($mq--desktop)
+    height 20em
+
+.textblock--alternate
+  background-color $color--graphite
+  color $color--white
+
+  .heading:before
+    background-color $color--white !important // @stylint ignore
+
+.textblock--breakout
+  +width-min($mq--tablet)
+    margin-top 5em
+
+  +width-min($mq--desktop)
+    margin-top 10em
+
+.textblock--image
+  height 20em
+
+.textblock__content
+  color inherit
+  display block
+  padding 2.5em 1em
+  position relative
+  text-decoration none
+
+  +width-min($mq--fablet)
+    padding-left 2.5em
+    padding-right 2.5em
+
+  +width-min($mq--desktop)
+    top 50%
+    transform translateY(-50%)
+
+.brand-banner
+  background $color--white url('/img/body.jpg') no-repeat 50% 50%
+  background-size cover
+  height 10em
   position relative
 
-  &.is-offline
-    display none
+  +width-min($mq--tablet)
+    height 20em
 
-.middled
-  position absolute
-  top 50%
-  left 50%
+.brand-fixed
+  background-attachment fixed !important // @stylint ignore
+
+.brand-gradient
+  background $color--blue
+  background-image linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+  color $color--white
+
+  .heading:before
+    background-color $color--white !important // @stylint ignore
+
+.brand-triangles
+  $height = 10em
+  $width = ($height * sin(30deg)) / sin(60deg)
+  $border-color = $color--grey--mid
+  $background-color = $color--grey
+
+  background linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / -2)
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / 2)
+    , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
+  background-size $width $height
+
+.brand-breakout
+  position relative
+
+  &:before
+  &:after
+    content ''
+    position absolute
+    background $color--white
+    height 5em
+    width 100%
+    z-index 1
+
+  &:after
+    top 5em
+
+  > *
+    position relative
+    z-index 2
+
+.button
+  color $color--black
+  display inline-block
+  margin 1em
+  position relative
+  padding 0.75em 2.75em 0.75em 0
+  text-align center
+
+  &:before
+    content ''
+    border 1px solid $color--black
+    position absolute
+    height 100%
+    width 100%
+    top 0
+    left 0
+    transform scaleX(1)
+    transition transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+  &:hover
+  &:focus
+    outline 0
+
+    &:before
+      transform scaleX(1.1)
+
+    .button__text
+      opacity 1
+
+      &:before
+        transform scaleX(1)
+
+.button__text
+  display inline-block
+  opacity 0.95
+
+  &:before
+    content ''
+    display inline-block
+    background $color--black
+    margin 0 0.25em 0 0.75em
+    height 1px
+    width 1.75em
+    vertical-align middle
+    transform scaleX(0)
+    transform-origin left
+    transition all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.button--alt
+  color $color--ghost
+
+  &:before
+    border-color $color--ghost
+
+  .button__text:before
+    background $color--ghost
+
+.section-header
+  background-color $color--white
+  margin-bottom -5em
+  padding 6em 2em
+  text-align center
+
+.heading
+  display inline-block
+  font-size 1.25em
+  font-weight bold
+  margin 0.8em 0
+  margin-left -1.75em
+
+  &:before
+    content ''
+    display inline-block
+    background $color--black
+    margin-right 0.5em
+    height 1px
+    width 1.25em
+    vertical-align middle
+
+.member
+  background $color--graphite
+  color $color--white
+  display block
+  height 0
+  overflow hidden
+  padding-bottom 100%
+  position relative
+  text-decoration none
+
+  &:before
+    content ''
+    background-color $color--black
+    opacity 0
+    position absolute
+    height 100%
+    width 100%
+    z-index 2
+    transition opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &:hover
+  &:focus
+    outline 0
+
+    &:before
+      opacity 0.75
+
+    .member__image
+      transform scale(1.15)
+
+    .member__content
+      &:before
+        width 90%
+        width calc(100% - 2em)
+
+    .member__detail
+      opacity 1
+      transform translate3d(0, 0, 0)
+
+.member--alt
+    background-color $color--steel
+
+.member__image
+  display block
+  position relative
+  z-index 1
   width 100%
-  transform translate3d(-50%, -50%, 0)
+  transform scale(1)
+  transition transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+.member__content
+  padding 1em
+  position absolute
+  width 100%
+  top 50%
+  transform translateY(-50%)
+  text-align center
+  z-index 3
+
+  &:before
+    content ''
+    background $color--ghost
+    display block
+    position absolute
+    top 50%
+    left 50%
+    transform translate3d(-50%, -50%, 0)
+    margin 0 auto
+    height 1px
+    width 0
+    transition width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s
+
+.member__detail
+  display inline-block
+  opacity 0
+  transition 0.6s all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s
+
+.member__name
+  display block
+  font-family $font--brand
+  font-size 2em
+  line-height 1
+  margin-bottom 0.5em
+  margin-top -0.5em
+  overflow hidden
+
+  .member__detail
+    transform translate3d(0, 0.5em, 0)
+
+.member__label
+  display block
+  font-size 0.8em
+  line-height 1
+  overflow hidden
+  position relative
+
+  .member__detail
+    transform translate3d(0, -1em, 0)
+
+.footer
+  color $color--grey--mid
+  padding 3em 0
+
+  +width-min($mq--desktop)
+    padding 5em 0
+
+.footer__content
+  color $color--grey--dark
+  font-size 0.8em
+
+.footer__heading
+  border-bottom 1px solid $color--steel
+  margin-bottom 0.5em
+  padding-bottom 1em
+
+.footer__heading--alt
+  border-bottom-color $color--graphite
+
+.footer__link
+  color $color--grey--mid
+  display block
+  padding 0.25em 0
+  text-decoration none
+  transition all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+  &:before
+    content ''
+    background $color--steel
+    display inline-block
+    height 1px
+    width 0
+    vertical-align middle
+    transform-origin left
+    transition all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+  &:hover
+  &:focus
+    color $color--white
+
+    &:before
+      margin-right 0.25em
+      width 1em
+
+.footer__logo
+  margin-bottom 2em
+  width 25%
+
+  +width-min($mq--fablet)
+    width 50%
