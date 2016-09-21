@@ -1,6 +1,6 @@
 { "threshold": 30
 , "identifiers": true
-, "ignore": "coverage|test"
+, "ignore": "coverage|test|_output"
 , "reporter": "default"
 , "suppress": 100
 }

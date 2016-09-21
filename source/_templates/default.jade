@@ -79,5 +79,4 @@ html(lang='en')
                 p &copy; #{date.getFullYear()} Avalanche UK
 
     block scripts
-      script
-        include ../js/_output.js
+      script(src='/js/output.js', defer, async)

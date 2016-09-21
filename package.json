@@ -5,7 +5,7 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "build:js": "browserify ./source/js/_source.js -o ./source/js/_output.js",
+    "build:js": "browserify ./source/js/_source.js | uglifyjs > ./source/js/output.js",
     "start": "pliers go -o",
     "deploy": "bash ./deploy.sh",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
@@ -30,7 +30,8 @@
     "jquery": "^3.1.0",
     "responsive-grid": "^1.1.0",
     "rfg-api": "^0.1.7",
-    "stylus-mixins": "^0.3.1"
+    "stylus-mixins": "^0.3.1",
+    "uglify": "^0.1.5"
   },
   "devDependencies": {
     "david": "^7.0.1",
