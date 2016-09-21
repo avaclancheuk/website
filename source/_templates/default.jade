@@ -40,7 +40,7 @@ html(lang='en')
       mixin link(text)
         a.header__link(data-wipe=text)&attributes(attributes)= text
 
-      .header(data-scroll-offset)
+      .header(role='banner', data-scroll-offset)
         .container
           .grid.grid--gutterless.grid--valign-middle
             .grid__item.logo__grid--fixed
@@ -53,10 +53,11 @@ html(lang='en')
               +link('Merchandise')(href='http://avaclancheuk.spreadshirt.co.uk/')
       .header.header--faux
 
-    block content
+    div(role='main')
+      block content
 
     block footer
-      .footer
+      .footer(role='contentinfo')
         .container
           .grid.grid--gutterless
             .grid__item.fablet-one-half.desktop-one-quarter

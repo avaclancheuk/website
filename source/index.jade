@@ -52,7 +52,7 @@ block content
 
             .grid__item.fablet-one-half.desktop-one-quarter
               a.member(href=streamer.url, class=index % 2 === 0 ? 'member--alt': '')
-                img.member__image(src=streamer.image, alt='')
+                img.member__image(src=streamer.image, alt=streamer.name + ' in action')
                 .member__content
                   h3.member__name
                     span.member__detail= streamer.name
