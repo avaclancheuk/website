@@ -292,7 +292,7 @@ $vhidden =
 
 .brand-fixed
   .no-touchevents &
-  background-attachment fixed !important // @stylint ignore
+    background-attachment fixed !important // @stylint ignore
 
 .brand-gradient
   background $color--blue
@@ -436,15 +436,13 @@ $vhidden =
     z-index 2
     transition opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)
 
+  .touchevents &
   &:hover
   &:focus
     outline 0
 
     &:before
-      opacity 0.75
-
-    .member__image
-      transform scale(1.15)
+      opacity 0.35
 
     .member__content
       &:before
@@ -454,6 +452,14 @@ $vhidden =
     .member__detail
       opacity 1
       transform translate3d(0, 0, 0)
+
+  &:hover
+  &:focus
+    &:before
+      opacity 0.75
+
+    .member__image
+      transform scale(1.15)
 
 .member--alt
     background-color $color--steel
