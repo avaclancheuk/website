@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html.no-js(lang='en')
 
   block settings
 
@@ -30,12 +30,57 @@ html(lang='en')
       block stylus
         include:stylus(compress=true) ../stylus/_index.styl
 
-  body(class=bodyClass || null)
-    block header
-      .header
-        .content-container
-          include ../img/logo.svg
+    script
+      include ../js/modernizr.js
 
-    block content
+  body(class=bodyClass || null, id='top')
+    mixin button
+      a.button&attributes(attributes)
+        span.button__text
+          block
+
+    block header
+      mixin link(text)
+        a.header__link(data-wipe=text)&attributes(attributes)= text
+
+      .header(role='banner', data-scroll-offset)
+        .container
+          .grid.grid--gutterless.grid--valign-middle
+            .grid__item.logo__grid--fixed
+              a.logo.brand-gradient(href='/', title='Home')
+                .logo__container
+                  include /img/logo.svg
+                  .is-vhidden Avalanche UK
+            .grid__item.logo__grid--flexible
+              +link('Join us')(href='/#join-us', data-scroll)
+              +link('Merchandise')(href='http://avaclancheuk.spreadshirt.co.uk/')
+      .header.header--faux
+
+    div(role='main')
+      block content
 
     block footer
+      .footer(role='contentinfo')
+        .container
+          .grid.grid--gutterless
+            .grid__item.fablet-one-half.desktop-one-quarter
+              a.footer__logo.logo.logo--tag(href='/#top', title='Back to top', data-scroll)
+                .logo__container
+                  include /img/logo__tag.svg
+                  .is-vhidden Avalanche UK
+            .grid__item.fablet-one-half.desktop-one-quarter
+              .footer__content
+                h2.footer__heading Follow us
+                a.footer__link(href='https://www.twitch.tv/avaclancheuk') Twitch
+                a.footer__link(href='https://www.youtube.com/avaclancheuk') YouTube
+                a.footer__link(href='https://twitter.com/avaclancheuk') Twitter
+                a.footer__link(href='https://www.facebook.com/avaclancheuk') Facebook
+                a.footer__link(href='https://plus.google.com/+avaclancheuk') Google+
+            .grid__item.desktop-one-half
+              .footer__content
+                .footer__heading.footer__heading--alt &nbsp;
+                - var date = new Date()
+                p &copy; #{date.getFullYear()} Avalanche UK
+
+    block scripts
+      script(src='/js/output.js', defer, async)

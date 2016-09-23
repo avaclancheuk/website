@@ -1,10 +1,11 @@
 {
   "name": "avalancheuk",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Ben Edwards <hello@benedfit.com>",
   "license": "ISC",
   "private": true,
   "scripts": {
+    "build:js": "browserify ./source/js/_source.js | uglifyjs > ./source/js/output.js",
     "start": "pliers go -o",
     "deploy": "bash ./deploy.sh",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
@@ -15,19 +16,22 @@
     "depcheck": "david",
     "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug",
     "test": "npm run coverage",
-    "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more",
-    "precommit": "npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug"
+    "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
   "dependencies": {
     "any-newer-files": "0.0.4",
     "browser-sync": "^2.12.3",
+    "browserify": "^13.1.0",
     "cloudflare-cli": "^1.5.2",
     "configury": "^0.3.0",
     "glob": "^7.0.3",
     "harp": "^0.20.3",
+    "jquery": "^3.1.0",
+    "pliers-modernizr": "^1.1.0",
     "responsive-grid": "^1.1.0",
     "rfg-api": "^0.1.7",
-    "stylus-mixins": "^0.3.1"
+    "stylus-mixins": "^0.3.1",
+    "uglify": "^0.1.5"
   },
   "devDependencies": {
     "david": "^7.0.1",

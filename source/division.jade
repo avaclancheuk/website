@@ -1,20 +1,4 @@
-extends _templates/default
-
-block settings
-  - var bodyClass = 'is-division'
-
-block meta
-  meta(name='robots', content='noindex,nofollow')
+extends branding
 
 block append stylus
   include:stylus(compress=true) stylus/_division.styl
-
-block header
-
-block content
-  - var n = 0
-  while n < 12
-    - n++
-    .grid(class='grid--' + n)
-      .grid__container
-        include img/logo.svg
