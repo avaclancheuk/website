@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html.no-js(lang='en')
 
   block settings
 
@@ -29,6 +29,9 @@ html(lang='en')
     style
       block stylus
         include:stylus(compress=true) ../stylus/_index.styl
+
+    script
+      include ../js/modernizr.js
 
   body(class=bodyClass || null, id='top')
     mixin button

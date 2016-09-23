@@ -4,6 +4,7 @@ function createTask (pliers) {
 
   pliers('build'
     , 'buildFavicon'
+    , 'buildModernizr'
     , 'buildHtml'
     )
 
