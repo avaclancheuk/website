@@ -1,8 +1,6 @@
 var $ = require('jquery')
   , scrollOffset = 0
 
-$('body').addClass('js')
-
 function scrollTo ($target) {
   var top = $target.offset().top - scrollOffset
 
