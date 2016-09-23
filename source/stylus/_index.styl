@@ -194,7 +194,9 @@ $vhidden =
     border-top 2px solid $color--black
     content ''
     top -1px
-    width 0
+    width 100%
+    transform scaleX(0)
+    transform-origin left
 
   &:after
     transition all 0.4s cubic-bezier(0.19, 1, 0.22, 1)
@@ -211,7 +213,7 @@ $vhidden =
     outline 0
 
     &:before
-      width 100%
+      transform scaleX(1)
 
     &:after
       -webkit-clip-path inset(0 0 0 0)
