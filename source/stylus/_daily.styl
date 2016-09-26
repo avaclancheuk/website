@@ -1,0 +1,79 @@
+@require '../../node_modules/stylus-mixins'
+@require '../../node_modules/responsive-grid'
+
+$color--black = #252525
+$color--white = #f2f2f2
+
+$font--base = 'Pavanam', sans-serif
+$font--heading = 'Lato2', $font--base
+
+$mq--mobile--portrait  = 320px
+$mq--mobile--landscape = 420px
+$mq--tablet--portrait  = 515px
+$mq--tablet--landscape = 768px
+$mq--desktop--small    = 1024px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+$mq--mobile  = $mq--mobile--portrait
+$mq--fablet  = $mq--tablet--portrait
+$mq--tablet  = $mq--tablet--landscape
+$mq--desktop = $mq--desktop--small
+
+grid-base()
+grid-gutter-modifier('gutterless', 0)
+grid-widths('', 2)
+
+*, *:before, *:after
+  box-sizing border-box
+
+html, body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, hr, legend, address, input, button, textarea, blockquote, table, th, td
+  font-size 1em
+  font-weight normal
+  margin 0
+  padding 0
+
+html
+  height 100%
+
+body
+  background $color--black
+  color $color--white
+  fill $color--white
+  font 112.5%/1.5 $font--base
+  height 100%
+  -webkit-font-smoothing antialiased
+
+.prose
+  * + *
+    margin-top 1em
+
+  h1, h2
+    font-family $font--heading
+    font-weight bold
+
+  h1
+    text-transform uppercase
+    letter-spacing 0.15em
+
+.content
+  padding 3em 0
+
+.container
+  margin auto
+  max-width 70em
+  padding 0 2em
+
+.header
+  background url('/img/daily/header.jpg') no-repeat 0 50%
+  background-size cover
+  padding 5em 0
+
+.footer
+  padding 3em 0
+
+.site-logo
+  display inline-block
+  font-weight bold
+  text-transform uppercase
+  letter-spacing 0.65em
