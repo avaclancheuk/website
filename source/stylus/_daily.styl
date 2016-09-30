@@ -1,8 +1,12 @@
 @require '../../node_modules/stylus-mixins'
 @require '../../node_modules/responsive-grid'
 
-$color--black = #252525
-$color--white = #f2f2f2
+$color--nero = #252525
+$color--empress = #7d6d70
+$color--matterhorn = #515151
+$color--salmon = #fa7b73
+$color--white-smoke = #f2f2f2
+$color--white = #fff
 
 $font--base = 'Pavanam', sans-serif
 $font--heading = 'Lato2', $font--base
@@ -37,16 +41,20 @@ html
   height 100%
 
 body
-  background $color--black
-  color $color--white
-  fill $color--white
+  background $color--nero
+  color $color--white-smoke
+  fill $color--white-smoke
   font 112.5%/1.5 $font--base
   height 100%
+  padding-top 147px
   -webkit-font-smoothing antialiased
 
 .prose
   * + *
     margin-top 1em
+
+  a
+    color $color--salmon
 
   h1, h2
     font-family $font--heading
@@ -61,20 +69,58 @@ body
 
 .container
   margin auto
-  max-width 70em
+  max-width 75em
   padding 0 2em
 
 .header
-  background url('/img/daily/header.jpg') no-repeat 0 50%
+  background $color--empress url('/img/daily/header.jpg') no-repeat 0 50%
   background-size cover
-  padding 5em 0
+  color $color--white
+  padding 1em 0
+  position fixed
+  top 0
+  width 100%
 
 .footer
-  padding 3em 0
+  padding 2em 0
 
 .site-logo
+  color $color--white
   display inline-block
+  fill $color--white
+  height 103px
+  width 83px
+  overflow hidden
+  vertical-align top
 
-  svg
-    max-width 100%
-    height auto
+  +width-min($mq--tablet)
+    width 295px
+
+.navigation
+  display inline-block
+  margin-left 3px
+  vertical-align top
+
+  a
+    background $color--empress
+    background rgba($color--salmon, 0.25)
+    border-bottom 3px solid transparent
+    color $color--white
+    display block
+    font-size 0.8em
+    font-weight bold
+    letter-spacing 0.25em
+    padding 1.5em 2em
+    padding-right 1.75em
+    text-align center
+    text-decoration none
+    text-transform uppercase
+
+    &:hover
+      background $color--white-smoke
+      border-bottom-color $color--salmon
+      color $color--empress
+
+  li
+    display inline-block
+    margin-right -1px
