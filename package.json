@@ -14,7 +14,7 @@
     "lintStylus": "stylint .",
     "inspect": "jsinspect .",
     "depcheck": "david",
-    "pretest": "pliers build",
+    "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "david": "^7.0.1",
-    "eslint": "^3.0.0",
+    "eslint": "^2.1.0",
     "eslint-config-clock": "^1.1.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
