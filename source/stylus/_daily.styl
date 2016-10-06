@@ -9,7 +9,7 @@ $color--white-smoke = #f2f2f2
 $color--white = #fff
 
 $font--base = 'Pavanam', sans-serif
-$font--heading = 'Lato2', $font--base
+$font--heading = $font--base
 
 $mq--mobile--portrait  = 320px
 $mq--mobile--landscape = 420px
@@ -46,7 +46,7 @@ body
   fill $color--white-smoke
   font 112.5%/1.5 $font--base
   height 100%
-  padding-top 147px
+  padding-top 139px
   -webkit-font-smoothing antialiased
 
 .prose
@@ -65,7 +65,7 @@ body
     letter-spacing 0.15em
 
 .content
-  padding 3em 0
+  padding 1em 0
 
 .container
   margin auto
@@ -124,3 +124,21 @@ body
   li
     display inline-block
     margin-right -1px
+
+.block
+  background $color--matterhorn
+  padding 5em 1em
+  text-align center
+
+  &:nth-of-type(even)
+    background lighten($color--matterhorn, 50%)
+
+.block--large
+  padding 10em 1em
+
+.block--small
+  padding 2em 1em
+
+.anchor
+  display inline-block
+  padding-top calc(139px + 1em)
