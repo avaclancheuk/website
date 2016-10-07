@@ -10,13 +10,16 @@ block stylus
 block header
   .header
     .container
-      a.site-logo(href='index.html')
-        include /img/daily/logo--full.svg
-      ul.navigation
-        li: a(href='index.html#daily') Daily
-        li: a(href='index.html#nightfall') Nightfall
-        li: a(href='index.html#weekly') Weekly
-        li: a(href='xur.html') Xûr
+      .grid.grid--gutterless
+        .grid__item.header__logo-container
+          a.site-logo(href='index.html')
+            include /img/daily/logo--full.svg
+        .grid__item.header__navigation-container
+          ul.navigation
+            li: a(href='index.html#daily') Daily
+            li: a(href='index.html#nightfall') Nightfall
+            li: a(href='index.html#weekly') Weekly
+            li: a(href='index.html#vendors') Vendors
 
 block footer
   .footer

@@ -8,7 +8,7 @@ $color--salmon = #fa7b73
 $color--white-smoke = #f2f2f2
 $color--white = #fff
 
-$font--base = 'Pavanam', sans-serif
+$font--base = 'Pavanam', Arial, sans-serif
 $font--heading = $font--base
 
 $mq--mobile--portrait  = 320px
@@ -23,6 +23,13 @@ $mq--mobile  = $mq--mobile--portrait
 $mq--fablet  = $mq--tablet--portrait
 $mq--tablet  = $mq--tablet--landscape
 $mq--desktop = $mq--desktop--small
+
+$mq--navigation--one-line = 645px
+$mq--navigation--logo-large = 860px
+
+$height--logo = 103px
+$width--logo-small = 83px
+$width--logo-large = 295px
 
 grid-base()
 grid-gutter-modifier('gutterless', 0)
@@ -70,7 +77,7 @@ body
 .container
   margin auto
   max-width 75em
-  padding 0 2em
+  padding 0 1em
 
 .header
   background $color--empress url('/img/daily/header.jpg') no-repeat 0 50%
@@ -81,6 +88,22 @@ body
   top 0
   width 100%
 
+.header__logo-container
+  +width-min($mq--fablet)
+    margin-right ($width--logo-small * -1)
+    width $width--logo-small
+
+  +width-min($mq--navigation--logo-large)
+    margin-right ($width--logo-large * -1)
+    width $width--logo-large
+
+.header__navigation-container
+  +width-min($mq--fablet)
+    padding-left $width--logo-small !important
+
+  +width-min($mq--navigation--logo-large)
+    padding-left $width--logo-large !important
+
 .footer
   padding 2em 0
 
@@ -88,31 +111,29 @@ body
   color $color--white
   display inline-block
   fill $color--white
-  height 103px
-  width 83px
+  height $height--logo
+  width $width--logo-small
   overflow hidden
   vertical-align top
 
-  +width-min($mq--tablet)
-    width 295px
+  +width-min($mq--navigation--logo-large)
+    width $width--logo-large
 
 .navigation
-  display inline-block
-  margin-left 3px
+  margin-top 4px
   vertical-align top
 
   a
     background $color--empress
-    background rgba($color--salmon, 0.25)
+    background rgba($color--salmon, 0.5)
     border-bottom 3px solid transparent
     color $color--white
     display block
     font-size 0.8em
     font-weight bold
     letter-spacing 0.25em
-    padding 1.5em 2em
-    padding-right 1.75em
-    text-align center
+    padding 0.75em 1em
+    padding-right 0.75em
     text-decoration none
     text-transform uppercase
 
@@ -122,8 +143,26 @@ body
       color $color--empress
 
   li
-    display inline-block
+    display block
+    margin-top -1px
     margin-right -1px
+
+  +width-min($mq--fablet)
+    display inline-block
+    margin-top 1px
+    margin-left 3px
+
+    a
+      padding-left 2em
+      padding-right 1.75em
+
+    li
+      display inline-block
+
+  +width-min($mq--navigation--one-line)
+    a
+      padding-top 1.5em
+      padding-bottom 1.5em
 
 .block
   background $color--matterhorn
