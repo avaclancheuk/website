@@ -68,7 +68,7 @@ body
   -webkit-font-smoothing antialiased
 
 img
-  display block
+  display inline-block
   max-width 100%
 
 $vhidden =
@@ -334,6 +334,24 @@ $vhidden =
     position relative
     z-index 2
 
+.brand-transparent
+  color $color--white
+  position relative
+
+  &:before
+    background rgba($color--graphite, 0.75)
+    content ''
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 0
+
+  .container
+    position relative
+    z-index 2
+
 .button
   color $color--black
   display inline-block
@@ -410,7 +428,7 @@ $vhidden =
   &:before
     content ''
     display inline-block
-    background $color--black
+    background currentColor
     margin-right 0.5em
     height 1px
     width 1.25em
