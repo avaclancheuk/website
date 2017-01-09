@@ -13,6 +13,7 @@
     , { "name": "benedfit", "label": "Twitch", "url": "https://www.twitch.tv/benedfit" }
     , { "disabled": true, "name": "Ace Eyed Ace", "label": "YouTube", "url": "https://www.youtube.com/user/aceeyedace" }
     , { "name": "mbeard", "label": "Twitch", "url": "https://www.twitch.tv/mbeard7" }
+    , { "name": "LlordFlashheart", "label": "Twitch", "url": "https://www.twitch.tv/llordflashheart" }
     ]
   }
 }
