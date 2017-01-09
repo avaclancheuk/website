@@ -47,16 +47,17 @@ block content
       .container
         .grid.grid--gutterless
           each streamer, index in streamers
-            - streamer.image = '/img/member--' + streamer.name.toLowerCase().replace(/ /g, '-') + '.jpg'
+            if !streamer.disabled
+              - streamer.image = '/img/member--' + streamer.name.toLowerCase().replace(/ /g, '-') + '.jpg'
 
-            .grid__item.fablet-one-half.desktop-one-quarter
-              a.member(href=streamer.url, class=index % 2 === 0 ? 'member--alt': '')
-                img.member__image(src=streamer.image, alt=streamer.name + ' in action')
-                .member__content
-                  h3.member__name
-                    span.member__detail= streamer.name
-                  p.member__label
-                    span.member__detail!= streamer.label || '&nbsp;'
+              .grid__item.fablet-one-half.desktop-one-quarter
+                a.member(href=streamer.url, class=index % 2 === 0 ? 'member--alt': '')
+                  img.member__image(src=streamer.image, alt=streamer.name + ' in action')
+                  .member__content
+                    h3.member__name
+                      span.member__detail= streamer.name
+                    p.member__label
+                      span.member__detail!= streamer.label || '&nbsp;'
 
   .content.brand-transparent(style='background-image:url(http://www.destiny-daily.com/assets/img/structure/main-header.jpg)')
     .container

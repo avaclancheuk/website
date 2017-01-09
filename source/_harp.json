@@ -5,13 +5,13 @@
   , "src": "source"
   , "dest": "_output"
   , "streamers":
-    [ { "name": "oO DECKA Oo", "label": "YouTube", "url": "https://www.youtube.com/user/naffdecka" }
-    , { "name": "Diamond Duck", "label": "YouTube", "url": "https://www.youtube.com/user/paultjohnson3" }
+    [ { "name": "ALastBoyScout", "label": "Twitch", "url": "https://www.twitch.tv/alastboyscout" }
+    , { "name": "Diamond Duck", "label": "Twitch", "url": "https://www.twitch.tv/paultjohnson3" }
     , { "name": "Kaiser1977", "label": "Twitch", "url": "https://www.twitch.tv/kaizer1977" }
-    , { "name": "vG Stryker", "label": "YouTube", "url": "https://www.youtube.com/user/13hulmey" }
+    , { "disabled": true, "name": "vG Stryker", "label": "YouTube", "url": "https://www.youtube.com/user/13hulmey" }
     , { "name": "welshy316", "label": "Twitch", "url": "https://www.twitch.tv/welshy316" }
     , { "name": "benedfit", "label": "Twitch", "url": "https://www.twitch.tv/benedfit" }
-    , { "name": "Ace Eyed Ace", "label": "YouTube", "url": "https://www.youtube.com/user/aceeyedace" }
+    , { "disabled": true, "name": "Ace Eyed Ace", "label": "YouTube", "url": "https://www.youtube.com/user/aceeyedace" }
     , { "name": "mbeard", "label": "Twitch", "url": "https://www.twitch.tv/mbeard7" }
     ]
   }
