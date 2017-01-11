@@ -1,12 +1,12 @@
 # https://avaclanche.uk/
 
-[![build status](https://img.shields.io/travis/benedfit/avalancheuk/master.svg)](https://travis-ci.org/benedfit/avalancheuk)
+[![build status](https://img.shields.io/travis/avaclancheuk/website/master.svg)](https://travis-ci.org/avaclancheuk/website)
 
 ## Installation
 
 ```
-git clone git@github.com:benedfit/avalancheuk.git
-cd avalanche
+git clone git@github.com:avaclancheuk/website.git
+cd website
 npm install
 npm start
 ```
