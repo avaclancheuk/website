@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd _output
+cd docs
 git init
 git config user.name "travis-ci"
 git config user.email "contact@travis-ci.com"

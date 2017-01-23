@@ -3,7 +3,7 @@
   , "description": "A team of parents and adult gamers who've found mutual friendship through Destiny, our goal is to play the games we love with people who share our ethics"
   , "themeColor": "#5674b9"
   , "src": "source"
-  , "dest": "_output"
+  , "dest": "docs"
   , "streamers":
     [ { "name": "ALastBoyScout", "label": "Twitch", "url": "https://www.twitch.tv/alastboyscout" }
     , { "name": "Diamond Duck", "label": "Twitch", "url": "https://www.twitch.tv/paultjohnson3" }
