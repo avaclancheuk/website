@@ -16,7 +16,8 @@
     "depcheck": "david",
     "pretest": "pliers build && npm run lintJs && npm run inspect && npm run lintStylus && npm run lintPug",
     "test": "npm run coverage",
-    "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
+    "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more",
+    "wrap": "npm shrinkwrap && pliers cleanShrinkwrap"
   },
   "dependencies": {
     "any-newer-files": "0.0.4",
@@ -45,6 +46,7 @@
     "jsinspect": "^0.8.0",
     "mocha": "^2.4.5",
     "pliers": "^1.2.1",
+    "pliers-clean-shrinkwrap": "^1.0.1",
     "pliers-imagemin": "^3.0.1",
     "pug-lint": "^2.2.2",
     "pug-lint-config-clock": "^1.2.0",
