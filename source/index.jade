@@ -59,10 +59,18 @@ block content
                     p.member__label
                       span.member__detail!= streamer.label || '&nbsp;'
 
-  .content.brand-transparent.brand-destiny-daily
+  .content.brand-transparent.brand-destiny-daily.brand-fixed
     .container
       .site-introduction
-        p
+        p.svg-logo
           include img/logo--destiny-daily.svg
-        p We run the only website you'll ever need to visit to see all the Daily and Weekly activities Destiny has to offer
+        p We run the only website you'll ever need to visit to see all the Daily and Weekly activities Destiny has to offer.
         +button.button--alt(href='http://www.destiny-daily.com') Visit Destiny Daily
+
+  .textblock.textblock--auto.brand-transparent.brand-guardian-outfitter.brand-fixed
+    .textblock__content.container
+      p.svg-logo
+        include img/logo--guardian-outfitter.svg
+      h2.heading Guardian Outfitter
+      p We also help the Guardian-around-town keep track of all those Emblems, Shader, Ships, and Sparrows, that are missing from their collections.
+      +button.button--alt(href='https://www.guardianoutfitter.com') Visit Guardian Outfitter

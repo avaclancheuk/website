@@ -151,15 +151,12 @@ $vhidden =
   +width-min($mq--desktop)
     padding 5em 0
 
-  h1, p
+  p
     font-size 1.25em
     margin-bottom 1em
 
     +width-min($mq--tablet)
       font-size 1.5em
-
-  h1
-    font-weight bold
 
 .header
   background $color--white
@@ -249,6 +246,14 @@ $vhidden =
   +width-min($mq--desktop)
     height 20em
 
+.textblock--auto
+  +width-min($mq--desktop)
+    height auto
+
+    .textblock__content
+      top auto
+      transform none
+
 .textblock--alternate
   background-color $color--graphite
   color $color--white
@@ -269,6 +274,8 @@ $vhidden =
 .textblock__content
   color inherit
   display block
+  margin auto
+  max-width 55em
   padding 2.5em 1em
   position relative
   text-decoration none
@@ -355,7 +362,10 @@ $vhidden =
 .brand-destiny-daily
   background-image url('/img/destiny-daily.jpg')
   background-position 50% 50%
-  background-attachment fixed
+
+.brand-guardian-outfitter
+  background-image url('/img/guardian-outfitter.jpg')
+  background-position 50% 50%
 
 .button
   color $color--black
@@ -543,6 +553,11 @@ $vhidden =
 
   .member__detail
     transform translate3d(0, -1em, 0)
+
+.svg-logo
+  svg
+    max-width 100%
+    height auto
 
 .footer
   color $color--grey--mid
