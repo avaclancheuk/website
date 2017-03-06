@@ -1,0 +1,229 @@
+@require '../../node_modules/stylus-mixins'
+
+@import '_settings'
+@import '_font'
+
+*, *:before, *:after
+  box-sizing border-box
+
+html, body, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, hr, legend, address, input, button, textarea, blockquote, table, th, td
+  font-size 1em
+  font-weight normal
+  margin 0
+  padding 0
+
+html
+  font-size inherit !important // @stylint ignore
+
+  body
+    {$triangles}
+    background-attachment fixed
+    color $color--black
+    font 112.5%/1.5 $font--base
+    -webkit-font-smoothing antialiased
+    padding 0 1em
+
+  .splash
+    width 100%
+    margin 0
+    padding 0
+
+.splash
+  text-align center
+
+  button
+    background none !important // @stylint ignore
+    display inline-block
+    font-size 1em
+    font-weight normal
+    line-height 1.5
+    margin 1em
+    padding 0.75em 2.75em
+    position relative
+    text-align center
+    text-transform none
+    width auto
+
+    &:before
+      content ''
+      border 1px solid currentColor
+      position absolute
+      height 100%
+      width 100%
+      top 0
+      left 0
+      transform scaleX(1)
+      transition transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+      z-index -1
+
+    &:hover
+    &:focus
+      outline 0
+
+      &:before
+        transform scaleX(1.1)
+
+    &:disabled
+      color $color--grey--dark
+
+      &:before
+        background $color--grey--mid
+
+      /* stylinpug whitelist: success */
+      &.success
+        color $color--white
+
+        &:before
+          background $color--turquoise
+
+    /* stylinpug whitelist: error */
+    &.error:before
+      background $color--red
+
+  footer
+    display none
+
+  form
+    margin 0 0 1em
+
+  p
+    font-size 1em
+    margin 0 0 1em
+
+  .head
+    display inline-block
+    font-size 1.25em
+    font-weight bold
+    margin 0.8em 0
+    margin-left -1.75em
+
+    &:before
+      content ''
+      display inline-block
+      background currentColor
+      margin-right 0.5em
+      height 1px
+      width 1.25em
+      vertical-align middle
+
+  .active
+  .total
+    color inherit
+
+  .coc
+    font-size 1em
+    color inherit
+    margin-bottom 1em
+    padding 0
+
+    a
+      color inherit
+
+      &:hover
+        background none
+        text-decoration underline
+
+    input
+      &:after
+        background $color--white
+        border 1px solid $color--grey
+        height 1.25em
+        width 1.25em
+        vertical-align text-bottom
+
+      &:checked:after
+        background $color--graphite
+        outline 4px solid $color--white
+        outline-offset -4px
+
+  .form-item
+    background $color--white
+    border 1px solid $color--grey
+    color $color--black
+    display inline-block
+    font-size 1em
+    margin 1em auto
+    padding 1em
+    text-align center
+    width 100%
+
+    &:focus
+      outline 1px solid $color--grey--dark
+
+  .logos
+    background $color--white
+    margin 0 -1em
+    padding 1em 1em 2em
+    position relative
+
+    &:before
+    &:after
+      content ''
+      position absolute
+      bottom -5em
+      left 0
+      background $color--white
+      height 5em
+      width 100%
+      z-index 1
+
+    &:after
+      bottom -10em
+
+  .logo
+    height 4em
+    width 4em
+
+    &.org
+      margin-right 2em
+
+      &:after
+        color $color--steel
+        top 1.5em
+
+  .signin
+    font-size 1em
+    padding 2.5em
+
+    a
+      color inherit
+      display inline-block
+      line-height 1.5
+      margin 2em 1em 1em
+      padding 0.75em 2.75em
+      position relative
+      text-align center
+
+      &:before
+        content ''
+        border 1px solid currentColor
+        position absolute
+        height 100%
+        width 100%
+        top 0
+        left 0
+        transform scaleX(1)
+        transition transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+      &:hover
+      &:focus
+        background none
+        color inherit
+        outline 0
+
+        &:before
+          transform scaleX(1.1)
+
+.splash-inner
+  {$gradient}
+  background-attachment fixed
+  color $color--white
+  margin auto
+  max-width 33em
+  padding 2.5em 1em
+  position relative
+  z-index 2
+
+  +width-min($mq--fablet)
+    padding-left 2.5em
+    padding-right 2.5em
