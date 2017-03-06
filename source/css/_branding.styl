@@ -9,14 +9,11 @@ body
   background-attachment fixed
 
 .hidden
+  display block
   height 0
   width 0
 
-.grid
-  display inline-block
-  margin 0
-  width 50%
-
+.brand
   svg
     height auto
     max-width 100%
@@ -29,77 +26,77 @@ body
   .fill
     transform translateY(20px)
 
-.grid--1
+.brand--1
   .stroke
     fill url(#gradient)
 
-.grid--2
+.brand--2
   .stroke
     fill none
   .fill
     fill url(#gradient)
 
-.grid--3
+.brand--3
   background $color--white
   .stroke
     fill url(#gradient)
 
-.grid--4
+.brand--4
   background $color--white
   .stroke
     fill none
   .fill
     fill url(#gradient)
 
-.grid--5
+.brand--5
   .stroke
     fill $color--white
 
-.grid--6
-  .stroke
-    fill none
-  .fill
-    fill $color--white
-
-.grid--7
-  background $color--blue linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
-  .stroke
-    fill $color--white
-
-.grid--8
-  background $color--blue linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+.brand--6
   .stroke
     fill none
   .fill
     fill $color--white
 
-.grid--9
+.brand--7
+  background $color--blue linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+  .stroke
+    fill $color--white
+
+.brand--8
+  background $color--blue linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+  .stroke
+    fill none
+  .fill
+    fill $color--white
+
+.brand--9
   .stroke
     fill $color--white
   .fill
     fill url(#gradient)
 
-.grid--10
+.brand--10
   .stroke
     fill url(#gradient)
   .fill
     fill $color--white
 
-.grid--11
+.brand--11
   background $color--black
   .stroke
     fill $color--white
   .fill
     fill url(#gradient)
 
-.grid--12
+.brand--12
   background $color--black
   .stroke
     fill url(#gradient)
   .fill
     fill $color--white
 
-.grid__container
+.brand__container
   height 0
   overflow hidden
   padding-bottom 100%

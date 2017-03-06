@@ -33,9 +33,11 @@ html.no-js(lang='en')
     script
       include ../js/modernizr.js
 
-  body(class=bodyClass || null, id='top')
+  body(class=bodyClass, id='top')
     mixin button
-      a.button&attributes(attributes)
+      - var tag = attributes.tag || 'a'
+      - attributes.tag = null
+      #{tag}.button&attributes(attributes)
         span.button__text
           block
 
@@ -51,9 +53,10 @@ html.no-js(lang='en')
                 .logo__container
                   include /img/logo.svg
                   .is-vhidden Avalanche UK
-            .grid__item.logo__grid--flexible
-              +link('Join us')(href='/#join-us', data-scroll)
-              +link('Merchandise')(href='http://avaclancheuk.spreadshirt.co.uk/')
+            block navigation
+              .grid__item.logo__grid--flexible
+                +link('Join us')(href='/#join-us', data-scroll)
+                +link('Merchandise')(href='http://avaclancheuk.spreadshirt.co.uk/')
       .header.header--faux
 
     div(role='main')

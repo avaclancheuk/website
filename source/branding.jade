@@ -17,10 +17,14 @@ block content
         stop(offset='100%', stop-color='#02fa9c')
 
   - var n = 0
-  while n < 12
-    - n++
-    .grid(class='grid--' + n)
-      .grid__container
-        include img/logo.svg
+  .grid.grid--gutterless
+    while n < 12
+      - n++
+      //- stylinpug whitelist: brand--*
+      .grid__item.one-half.brand(class='brand--' + n)
+        .brand__container
+          //- stylinpug whitelist: fill
+          //- stylinpug whitelist: stroke
+          include img/logo.svg
 
 block footer

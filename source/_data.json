@@ -10,4 +10,8 @@
 , "index":
   { "title": "Avalanche UK | Destiny clan on Xbox One"
   }
+, "slackin":
+  { "title": "Join us on Slack - Avalanche UK"
+  , "bodyClass": "brand-triangles brand-fixed has-static-header"
+  }
 }

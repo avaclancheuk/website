@@ -14,6 +14,10 @@ $color--steel = #666
 $color--turquoise = #02fa9c
 $color--white = #fff
 
+$gradient =
+  background $color--blue
+  background-image linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+
 $font--base = 'chalet', sans-serif
 $font--brand = 'ostrich', $font--base
 
@@ -34,18 +38,30 @@ $logo--width = 4em
 
 @import '_font'
 
+/* stylinpug whitelist: grid */
+/* stylinpug whitelist: grid__item */
 grid-base()
+
+/* stylinpug whitelist: grid--reverse */
 grid-reverse()
+
+/* stylinpug whitelist: grid--gutterless */
 grid-gutter-modifier('gutterless', 0)
-// grid-widths('', 0)
+
+/* stylinpug whitelist: one-half */
+grid-widths('', 2)
 
 +width-min($mq--fablet)
+  /* stylinpug whitelist: fablet-one-half */
   grid-widths('fablet', 2)
 
 +width-min($mq--tablet)
+  /* stylinpug whitelist: tablet-one-half */
   grid-widths('tablet', 2)
 
 +width-min($mq--desktop)
+  /* stylinpug whitelist: desktop-one-half */
+  /* stylinpug whitelist: desktop-*-quarter* */
   grid-widths('desktop', 2 4)
 
 .grid--valign-middle
@@ -71,6 +87,13 @@ img
   display inline-block
   max-width 100%
 
+$hidden =
+  display none
+
++width-max($mq--tablet - 1)
+  .is-hidden-mobile
+    {$hidden}
+
 $vhidden =
   position absolute !important // @stylint ignore
   clip rect(0, 0, 0, 0) !important // @stylint ignore
@@ -87,8 +110,10 @@ $vhidden =
 .logo
   color $color--white
   fill $color--white
-  display block
+  display inline-block
   padding 0.25em
+  text-align left
+  vertical-align middle
   width $logo--width
 
 .logo--tag
@@ -113,9 +138,21 @@ $vhidden =
   margin-right -($logo--width)
   width $logo--width
 
+  & + &
+    margin-right 0
+    padding-left $logo--width !important // @stylint ignore
+    width auto
+
 .logo__grid--flexible
   padding-left $logo--width !important // @stylint ignore
   text-align right
+
+.logo-divider
+  color $color--steel
+  display inline-block
+  font-size 1.25em
+  padding 0 0.5em
+  vertical-align middle
 
 .content
   background $color--white
@@ -166,11 +203,19 @@ $vhidden =
   z-index 1000
   width 100%
 
+  .has-static-header &
+    padding 1em 0 2em
+    position static
+    text-align center
+
 .header--faux
   background $color--white
   height ($logo--width + 2em)
   position static
   z-index auto
+
+  .has-static-header &
+    display none
 
 .header__link
   border-top 1px solid $color--grey--mid
@@ -240,11 +285,18 @@ $vhidden =
   display block
   text-align center
 
+  a
+    color inherit
+
   p
     margin-bottom 1em
 
   +width-min($mq--desktop)
     height 20em
+
+.textblock--centered
+  margin auto
+  max-width 33em
 
 .textblock--auto
   +width-min($mq--desktop)
@@ -270,6 +322,9 @@ $vhidden =
 
 .textblock--image
   height 20em
+
+.textblock--transparent
+  background none
 
 .textblock__content
   color inherit
@@ -302,8 +357,7 @@ $vhidden =
     background-attachment fixed !important // @stylint ignore
 
 .brand-gradient
-  background $color--blue
-  background-image linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+  {$gradient}
   color $color--white
 
   .heading:before
@@ -368,12 +422,17 @@ $vhidden =
   background-position 50% 50%
 
 .button
+  background none
+  border 0
   color $color--black
+  cursor pointer
   display inline-block
+  line-height 1.5
   margin 1em
   position relative
   padding 0.75em 2.75em 0.75em 0
   text-align center
+  vertical-align middle
 
   &:before
     content ''
@@ -423,6 +482,42 @@ $vhidden =
 
   .button__text:before
     background $color--ghost
+
+.input
+  background $color--white
+  border 1px solid $color--grey
+  color $color--black
+  display inline-block
+  margin 1em auto
+  padding 1em
+  text-align center
+  width 100%
+
+  &:focus
+    outline 1px solid $color--grey--dark
+
+.checkbox
+  cursor pointer
+
+  span
+    &:before
+      content ''
+      background $color--white
+      border 1px solid $color--grey
+      display inline-block
+      line-height 1.5
+      margin-right 0.5em
+      height 1.25em
+      width 1.25em
+      vertical-align text-bottom
+
+  input
+    display none
+
+    &:checked ~ span:before
+      background $color--graphite
+      outline 4px solid $color--white
+      outline-offset -4px
 
 .section-header
   background-color $color--white

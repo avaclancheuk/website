@@ -1,0 +1,39 @@
+extends _templates/default
+
+block meta
+  meta(name='robots', content='noindex,nofollow')
+
+block navigation
+  .grid__item.logo__grid--fixed
+    .logo-divider +
+    a.logo(href='https://avaclancheuk.slack.com', target='_top', title='Sign in')
+      .logo__container
+        img(src='https://slack.avaclanche.uk/assets/slack.svg', alt='Slack')
+
+block content
+  .content.brand-triangles.brand-breakout.brand-fixed
+    .container
+      .textblock.textblock--centered.textblock--auto.brand-gradient.brand-fixed
+        .textblock__content
+          h1.heading
+            label(for='email') Join us on Slack
+          //- stylinpug whitelist: status
+          //- stylinpug whitelist: active
+          //- stylinpug whitelist: total
+          p.status #[strong.active 3] users online now of #[strong.total 102] registered.
+          form(action='', id='invite')
+            p
+              input.input(type='email', id='email', name='email', placeholder='you@yourdomain.com', autofocus='true')
+              br
+              label.checkbox(for='coc')
+                input(type='checkbox', id='coc', name='coc', value='1')
+                span I agree to the #[a(href='https://www.bungie.net/en/Clan/Post/1486166/209324330') Code of Conduct].
+            p
+              +button.button--alt(tag='button') Get my invite
+      .textblock.textblock--transparent.textblock--centered.textblock--auto(id='join-us')
+        .textblock__content
+          p or
+          p
+            +button(href='https://avaclancheuk.slack.com', target='_top') Sign in
+
+block footer

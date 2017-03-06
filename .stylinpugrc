@@ -1,0 +1,25 @@
+{ "ignoreFiles": []
+
+, "stylusWhitelist":
+  /* Modernizr classes */
+  [ "*js"
+  , "*touchevents"
+
+  /* State classes */
+  , "is-*"
+  , "has-*"
+  ]
+
+, "pugWhitelist":
+  /* js-* classes ONLY allowed in Pug */
+  [ "js-*"
+  , "no-js"
+  ]
+
+, "stylusBlacklist":
+  /* js-* classes NOT allowed in Stylus */
+  [ "js-*"
+  ]
+
+, "pugBlacklist": []
+}
