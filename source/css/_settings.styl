@@ -1,0 +1,47 @@
+$color--black = #222
+$color--blue = #5674b9
+$color--ghost = #f8f8f8
+$color--graphite = #444
+$color--grey = #eee
+$color--grey--mid = darken($color--grey, 10%)
+$color--grey--dark = darken($color--grey, 30%)
+$color--purple = #8560a8
+$color--silver = #727272
+$color--steel = #666
+$color--turquoise = #02fa9c
+$color--white = #fff
+
+$gradient =
+  background $color--blue
+  background-image linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
+
+$triangles =
+  $height = 10em
+  $width = ($height * sin(30deg)) / sin(60deg)
+  $border-color = $color--grey--mid
+  $background-color = $color--grey
+
+  background linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / -2)
+    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / 2)
+    , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
+  background-size $width $height
+
+$font--base = 'chalet', sans-serif
+$font--brand = 'ostrich', $font--base
+
+$mq--mobile--portrait  = 320px
+$mq--mobile--landscape = 420px
+$mq--tablet--portrait  = 515px
+$mq--tablet--landscape = 768px
+$mq--desktop--small    = 1024px
+$mq--desktop--medium   = 1280px
+$mq--desktop--large    = 1600px
+
+$mq--mobile  = $mq--mobile--portrait
+$mq--fablet  = $mq--tablet--portrait
+$mq--tablet  = $mq--tablet--landscape
+$mq--desktop = $mq--desktop--small
+
+$logo--width = 4em
