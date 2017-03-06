@@ -53,13 +53,6 @@ img
   display inline-block
   max-width 100%
 
-$hidden =
-  display none
-
-+width-max($mq--tablet - 1)
-  .is-hidden-mobile
-    {$hidden}
-
 $vhidden =
   position absolute !important // @stylint ignore
   clip rect(0, 0, 0, 0) !important // @stylint ignore
@@ -104,21 +97,9 @@ $vhidden =
   margin-right -($logo--width)
   width $logo--width
 
-  & + &
-    margin-right 0
-    padding-left $logo--width !important // @stylint ignore
-    width auto
-
 .logo__grid--flexible
   padding-left $logo--width !important // @stylint ignore
   text-align right
-
-.logo-divider
-  color $color--steel
-  display inline-block
-  font-size 1.25em
-  padding 0 0.5em
-  vertical-align middle
 
 .content
   background $color--white
@@ -169,19 +150,11 @@ $vhidden =
   z-index 1000
   width 100%
 
-  .has-static-header &
-    padding 1em 0 2em
-    position static
-    text-align center
-
 .header--faux
   background $color--white
   height ($logo--width + 2em)
   position static
   z-index auto
-
-  .has-static-header &
-    display none
 
 .header__link
   border-top 1px solid $color--grey--mid
@@ -260,10 +233,6 @@ $vhidden =
   +width-min($mq--desktop)
     height 20em
 
-.textblock--centered
-  margin auto
-  max-width 33em
-
 .textblock--auto
   +width-min($mq--desktop)
     height auto
@@ -288,9 +257,6 @@ $vhidden =
 
 .textblock--image
   height 20em
-
-.textblock--transparent
-  background none
 
 .textblock__content
   color inherit
@@ -438,42 +404,6 @@ $vhidden =
 
   .button__text:before
     background $color--ghost
-
-.input
-  background $color--white
-  border 1px solid $color--grey
-  color $color--black
-  display inline-block
-  margin 1em auto
-  padding 1em
-  text-align center
-  width 100%
-
-  &:focus
-    outline 1px solid $color--grey--dark
-
-.checkbox
-  cursor pointer
-
-  span
-    &:before
-      content ''
-      background $color--white
-      border 1px solid $color--grey
-      display inline-block
-      line-height 1.5
-      margin-right 0.5em
-      height 1.25em
-      width 1.25em
-      vertical-align text-bottom
-
-  input
-    display none
-
-    &:checked ~ span:before
-      background $color--graphite
-      outline 4px solid $color--white
-      outline-offset -4px
 
 .section-header
   background-color $color--white
