@@ -8,14 +8,13 @@ html
   .splash
     .logos
       .logo.org
-      //- stylinpug whitelist: slack
+      //- stylinpug whitelist: {slack,status,loading}
       .logo.slack
     .splash-inner
       h1.head
         | Join 
         b us
         |  on Slack
-      //- stylinpug whitelist: status
       p.status
         b.active 5
         |  users online now of 
@@ -29,7 +28,6 @@ html
             | I agree to the 
             a(href='https://www.bungie.net/en/Clan/Post/1486166/209324330', target='_blank') Code of Conduct
             | .
-        //- stylinpug whitelist: loading
         button.loading Get my Invite
     p.signin
       | or

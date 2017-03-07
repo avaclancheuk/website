@@ -4,8 +4,7 @@
 @import '_settings'
 @import '_font'
 
-/* stylinpug whitelist: grid */
-/* stylinpug whitelist: grid__item */
+/* stylinpug whitelist: {grid,grid__item} */
 grid-base()
 
 /* stylinpug whitelist: grid--reverse */
@@ -26,8 +25,7 @@ grid-widths('', 2)
   grid-widths('tablet', 2)
 
 +width-min($mq--desktop)
-  /* stylinpug whitelist: desktop-one-half */
-  /* stylinpug whitelist: desktop-*-quarter* */
+  /* stylinpug whitelist: {desktop-one-half,desktop-*-quarter*} */
   grid-widths('desktop', 2 4)
 
 .grid--valign-middle
