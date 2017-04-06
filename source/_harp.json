@@ -15,5 +15,9 @@
     , { "name": "mbeard", "label": "Twitch", "url": "https://www.twitch.tv/mbeard7" }
     , { "name": "LlordFlashheart", "label": "Twitch", "url": "https://www.twitch.tv/llordflashheart" }
     ]
+  , "emblems":
+    [ { "name": "Glass and Time", "image": "https://www.bungie.net/common/destiny_content/icons/9979961d2e5409df64131f2b092b7007.jpg" }
+    , { "name": "Sheltered Truth II", "image": "https://www.bungie.net/common/destiny_content/icons/2c427ad64c2f2b31dfc7ddde2188ef45.jpg" }
+    ]
   }
 }

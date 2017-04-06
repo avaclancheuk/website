@@ -34,10 +34,10 @@ block content
           .textblock.textblock--alternate(id='join-us')
             .textblock__content
               h2.heading Come join us
-              p We're hardcore casuals, we like gittin gud, and we've got room for like minded souls. Join us on Slack, join the madness, join the clan you've been looking for.
+              p We're hardcore casuals, we like #[q gittin gud], and we've got the room for like minded souls. Join us on Slack, join the madness, join the clan you've been looking for.
               p
-                +button.button--alt(href='https://www.bungie.net/en/Clan/Detail/1486166') Bungie.net
-                +button.button--alt(href='http://slack.avaclanche.uk/') Slack chat
+                +button(href='https://www.bungie.net/en/Clan/Detail/1486166') Bungie.net
+                +button(href='http://slack.avaclanche.uk/') Slack chat
 
   if streamers
     - streamers = streamers.sort(function (a, b) { return a.name.toLowerCase() === b.name.toLowerCase() ? 0 : a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1 })
@@ -65,7 +65,7 @@ block content
         p.svg-logo
           include img/logo--destiny-daily.svg
         p We run the only website you'll ever need to visit to see all the Daily and Weekly activities Destiny has to offer.
-        +button.button--alt(href='http://www.destiny-daily.com') Visit Destiny Daily
+        +button(href='http://www.destiny-daily.com') Visit Destiny Daily
 
   .textblock.textblock--auto.brand-transparent.brand-guardian-outfitter.brand-fixed
     .textblock__content.container
@@ -73,4 +73,4 @@ block content
         include img/logo--guardian-outfitter.svg
       h2.heading Guardian Outfitter
       p We also help the Guardian-around-town keep track of all those Emblems, Shader, Ships, and Sparrows, that are missing from their collections.
-      +button.button--alt(href='https://www.guardianoutfitter.com') Visit Guardian Outfitter
+      +button(href='https://www.guardianoutfitter.com') Visit Guardian Outfitter

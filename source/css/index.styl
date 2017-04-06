@@ -21,12 +21,15 @@ grid-widths('', 2)
   grid-widths('fablet', 2)
 
 +width-min($mq--tablet)
-  /* stylinpug whitelist: tablet-one-half */
-  grid-widths('tablet', 2)
+  /* stylinpug whitelist: {tablet-one-half,tablet-*-quarter*} */
+  grid-widths('tablet', 2 4)
 
 +width-min($mq--desktop)
   /* stylinpug whitelist: {desktop-one-half,desktop-*-quarter*} */
   grid-widths('desktop', 2 4)
+
+.grid--align-center
+  text-align center
 
 .grid--valign-middle
   > .grid__item
@@ -50,6 +53,24 @@ body
 img
   display inline-block
   max-width 100%
+
+li
+  list-style none
+  padding-left 1em
+  position relative
+
+  &:before
+    content ''
+    display block
+    width 0
+    height 0
+    border-style solid
+    border-width 15.6px 9px 0
+    border-color currentColor transparent transparent
+    opacity 0.75
+    position absolute
+    top -4.5px
+    left -0.5em
 
 $vhidden =
   position absolute !important // @stylint ignore
@@ -133,12 +154,27 @@ $vhidden =
   +width-min($mq--desktop)
     padding 5em 0
 
+  a
+    color inherit
+
   p
     font-size 1.25em
     margin-bottom 1em
 
+    &:last-child
+      margin-bottom 0
+
     +width-min($mq--tablet)
       font-size 1.5em
+
+  .heading
+    font-size 1.5em
+
+    +width-min($mq--tablet)
+      font-size 1.75em
+
+.site-introduction--first
+  padding-top 0
 
 .header
   background $color--white
@@ -225,7 +261,11 @@ $vhidden =
   a
     color inherit
 
+  li + li
+    margin-top 1em
+
   p
+  ul
     margin-bottom 1em
 
   +width-min($mq--desktop)
@@ -242,6 +282,9 @@ $vhidden =
 .textblock--alternate
   background-color $color--graphite
   color $color--white
+
+  .button
+    color $color--ghost
 
   .heading:before
     background-color $color--white !important // @stylint ignore
@@ -260,7 +303,7 @@ $vhidden =
   color inherit
   display block
   margin auto
-  max-width 55em
+  max-width 40em
   padding 2.5em 1em
   position relative
   text-decoration none
@@ -344,7 +387,7 @@ $vhidden =
 .button
   background none
   border 0
-  color $color--black
+  color currentColor
   cursor pointer
   display inline-block
   line-height 1.5
@@ -356,7 +399,7 @@ $vhidden =
 
   &:before
     content ''
-    border 1px solid $color--black
+    border 1px solid currentColor
     position absolute
     height 100%
     width 100%
@@ -385,7 +428,7 @@ $vhidden =
   &:before
     content ''
     display inline-block
-    background $color--black
+    background currentColor
     margin 0 0.25em 0 0.75em
     height 1px
     width 1.75em
@@ -393,15 +436,6 @@ $vhidden =
     transform scaleX(0)
     transform-origin left
     transition all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
-
-.button--alt
-  color $color--ghost
-
-  &:before
-    border-color $color--ghost
-
-  .button__text:before
-    background $color--ghost
 
 .section-header
   background-color $color--white
@@ -411,6 +445,9 @@ $vhidden =
 
   +width-min($mq--fablet)
     padding-top 6em
+
+.prose
+  text-align left
 
 .heading
   display inline-block
@@ -532,6 +569,13 @@ $vhidden =
 
   .member__detail
     transform translate3d(0, -1em, 0)
+
+.emblem
+  margin-top 1em
+
+.emblem__image
+  padding 5px
+  width 6em
 
 .svg-logo
   svg

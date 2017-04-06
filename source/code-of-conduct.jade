@@ -1,0 +1,45 @@
+extends _templates/default
+
+block content
+  .content
+    .container
+      .site-introduction.site-introduction--first
+        h1.heading Code of Conduct
+        p #[strong Avalanche UK] has been created by mature players who came together as a fireteam in a previous clan. Taking pride in our achievements and helping other fireteams in the clan through activities such as #[strong Raids] and the #[strong Prison of Elders] was where we excelled. A change of direction led our fireteam to begin a new chapter in the Destiny-verse, one where we could offer help to those who required it and more importantly gather new clan mates who play with the same ethics of the original #[q Avalanche] fireteam members. Although our #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] are mature in age, we all act years younger. Destiny is an escape from the real world hassle, a place where we can forget the grind of day-to-day business, a place where we can laugh and joke with old friends and new. All we ask is that any new clan members respect our simple rules and if you so wish, display our name with pride.
+
+  .content.brand-triangles.brand-breakout.brand-fixed
+    .container
+      .grid.grid--gutterless.grid--align-center
+        .grid__item.tablet-three-quarters
+          .textblock.textblock--auto.brand-gradient.brand-fixed
+            .textblock__content
+              h2.heading Rules
+              ul.prose
+                li Most importantly we play for fun, this does not mean however that we will accept continuous streams of profanity from players. We understand everyone gets upset with games from time to time and swearing is a way of venting, we would just ask that you are aware of such language. As we play for fun please do not vent frustration or get upset with teammates for errors, quitting mid-session whatever the reason, or for discussing distracting topics during a game session.
+                li We can also play seriously if this is your aim, usually during Hard Raids or new content where game mechanics require thought to work out. Here the majority of discussion is on the game, calling out targets, and discussing strategy, but still, we are a casual group and as such even these game sign-ups may end up with banter and joking during game chat.
+                li Game day sign-ups will be addressed on a first come first served basis. This is the fairest way to populate game days. All of our #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] are parents, we know about time limitations, about commitments and we understand the unexpected happens. If you have been placed in an incomplete or reserve team, respect the decision and add your name to the sign-up post that bit earlier next time. If you have been assigned a team and are unable to make it please message either your Fireteam Leader (FTL) or any member of the Admin team as soon as possible to allow a reserve to be given your spot. Game days are arranged to help clan mates first and members/followers second.
+                li There is no minimum time commitment for becoming a clan member, we simply ask that you be as active as you can. However, continued inactivity, or repeated failure to attend events you have been assigned to, may result in removal of your clan tag.
+                li If a problem with a fellow clan member arises, the issue should be raised privately to one of the #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins]. The issue should not be posted in group messages or publicly on any forum.
+                li #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] will have no problem with running activities if they have already completed them, to help those who have not. Please do not abuse us. We talk daily and will discuss those who are here just to use us as an LFG group, such members may be asked to leave. All we ask is that you invest into the clan as much as we invest into you.
+                li This clan has a zero tolerance policy for discrimination and racism. Comments made when you are playing with a group consisting of only your own (out of clan) friends are your own responsibility, but any racist, sexist, or discriminatory remarks made when playing with the clan, or with players that you do not know, is grounds for removal from the clan. Remember if you play with a group outside of our clan YOU represent our clan. YOU are an ambassador of Avalanche UK. Respect the players you are with, please do not treat them with contempt. If they are disrespectful to you and are a member of another clan let an Admin know. DO NOT take matters into your own hands by publicly flaming them in-game or on forums. Any news that reaches #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] of inappropriate behaviour from clan members whatever the scenario may result in a ban from Avalanche UK.
+              p.prose Any breaches of the Code of Conduct can also be reported via email to #[a(href='mailto:admins@avaclanche.uk') admins@avaclanche.uk].
+
+          .textblock.textblock--auto
+            .textblock__content
+              h2.heading Fireteam unity
+              p.prose While entirely optional, The #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] would like to invite fireteams  taking part in organised events to don matching emblems from one of our preferred:
+
+              if emblems
+                .grid
+                  each emblem in emblems
+                    .grid__item.fablet-one-half
+                      .emblem
+                        img.emblem__image.brand-gradient.brand-fixed(src=emblem.image, alt='')
+                        p= emblem.name
+
+          .textblock.textblock--alternate.textblock--auto
+            .textblock__content
+              h2.heading Thanks
+              p The #[a(href='https://www.bungie.net/en/Clan/GroupMembers/1486166#members', data-scroll) Admins] would like to thank you for taking the time to read our Code of Conduct. Please feel free to introduce yourself to the rest of the clan by adding to our #[q Gamer tags and introductions] thread on Bungie.net.
+              p
+                +button(href='https://www.bungie.net/en/Clan/Post/1486166/204828058/') Say hello
