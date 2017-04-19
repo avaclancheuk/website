@@ -1,19 +1,17 @@
 var $ = require('jquery')
-  , scrollOffset = 0
 
 function scrollTo ($target) {
-  var top = $target.offset().top - scrollOffset
+  var top = $target.offset().top
+    , hash = $target.attr('id')
 
   $('body').animate({
     scrollTop: top
-  }, 500)
+  }, 500, function () {
+    if (window.location.hash !== hash) {
+      window.location.hash = hash
+    }
+  })
 }
-
-$('[data-scroll-offset]').each(function () {
-  var $this = $(this)
-
-  scrollOffset += $this.outerHeight()
-})
 
 $('[data-scroll]').click(function (e) {
   var hash = $(this).attr('href').replace('/', '')

@@ -15,7 +15,8 @@ block content
     .container
       .grid.grid--gutterless.grid--reverse
         .grid__item.tablet-one-half
-          .textblock.brand-gradient.brand-fixed(id='find-out-more')
+          a(id='find-out-more', data-target)
+          .textblock.brand-gradient.brand-fixed
             .textblock__content
               h2.heading A common goal
               p Finally getting the last piece of raid armour you've been missing, that feels good. Finding a group that'll run the raid with you three times a week until you finally get it, that's golden.
@@ -31,7 +32,8 @@ block content
           .textblock.textblock--image(style='background-image: url(/img/homepage-2.jpg)')
       .grid.grid--gutterless.grid--reverse
         .grid__item.desktop-one-half
-          .textblock.textblock--alternate(id='join-us')
+          a(id='join-us', data-target)
+          .textblock.textblock--alternate
             .textblock__content
               h2.heading Come join us
               p We're hardcore casuals, we like #[q gittin gud], and we've got the room for like minded souls. Join us on Slack, join the madness, join the clan you've been looking for.
@@ -41,7 +43,7 @@ block content
 
   if streamers
     - streamers = streamers.sort(function (a, b) { return a.name.toLowerCase() === b.name.toLowerCase() ? 0 : a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1 })
-    .content.brand-triangles.brand-fixed(id='streams')
+    .content.brand-triangles.brand-fixed
       .section-header.brand-gradient.brand-fixed
         h2.heading See some of us in action
       .container
