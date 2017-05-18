@@ -8,6 +8,11 @@
   /* State classes */
   , "is-*"
   , "has-*"
+
+  /* Spreadshirt */
+  , "sprd-*"
+  , "Sprd*"
+  , "custom*"
   ]
 
 , "pugWhitelist":
