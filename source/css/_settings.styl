@@ -29,6 +29,21 @@ $triangles =
     , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
   background-size $width $height
 
+$zigzag =
+  $height = 2.5em
+  $border-color = $color--white
+  $background-color = transparent
+
+  background linear-gradient(135deg, $border-color 0, $border-color 25%, transparent 25%, transparent 100%)
+    , linear-gradient(225deg, $border-color 25%, transparent 25%)
+    , linear-gradient(315deg, $border-color 25%, transparent 25%)
+    , linear-gradient(45deg, $border-color 25%, transparent 25%), $background-color
+  background-position ($height * -1) 0, ($height * -1) 0, 0 0, 0 0
+  background-size ($height * 2) ($height * 2)
+  height 100%
+  position relative
+  z-index 1
+
 $font--base = 'chalet', sans-serif
 $font--brand = 'ostrich', $font--base
 
