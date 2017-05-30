@@ -17,29 +17,32 @@ $gradient =
   background-image linear-gradient(-225deg, $color--purple 0, $color--blue 30%, $color--turquoise 100%)
 
 $triangles =
+  $angle = 60deg
   $height = 10em
-  $width = ($height * sin(30deg)) / sin(60deg)
+  $width = ($height * sin(90 - $angle)) / sin($angle)
   $border-color = $color--grey--mid
   $background-color = $color--grey
 
-  background linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
-    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
-    , linear-gradient(120deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / -2)
-    , linear-gradient(240deg, transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / 2)
+  background linear-gradient((180 - $angle), transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient((180 + $angle), transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) 0 0
+    , linear-gradient((180 - $angle), transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / -2)
+    , linear-gradient((180 + $angle), transparent calc(75% - 1px), $border-color 75%, transparent calc(75% + 1px)) ($width / 2) ($height / 2)
     , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
   background-size $width $height
 
 $zigzag =
+  $angle = 55deg
   $height = 2.5em
+  $width = (($height / sin($angle)) * sin(90 - $angle))
   $border-color = $color--white
   $background-color = transparent
 
-  background linear-gradient(135deg, $border-color 0, $border-color 25%, transparent 25%, transparent 100%)
-    , linear-gradient(225deg, $border-color 25%, transparent 25%)
-    , linear-gradient(315deg, $border-color 25%, transparent 25%)
-    , linear-gradient(45deg, $border-color 25%, transparent 25%), $background-color
-  background-position ($height * -1) 0, ($height * -1) 0, 0 0, 0 0
-  background-size ($height * 2) ($height * 2)
+  background linear-gradient((180 - $angle), $border-color 25%, transparent 25%)
+    , linear-gradient((180 + $angle), $border-color 25%, transparent 25%)
+    , linear-gradient((360 - $angle), $border-color 25%, transparent 25%)
+    , linear-gradient($angle, $border-color 25%, transparent 25%), $background-color
+  background-position ($width * -1) 0, ($width * -1) 0, 0 0, 0 0
+  background-size ($width * 2) ($height * 2)
   height 100%
   position relative
   z-index 1
