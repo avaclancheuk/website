@@ -1,12 +1,6 @@
-extends _templates/default
+extends _templates/error
 
-block meta
-  meta(name='robots', content='noindex,nofollow')
-
-block content
-  .content.brand-triangles
-    .container
-      .site-introduction
-        h1.heading Page not found
-        p I don't have time to explain, why I don't have time to explain why I couldn't find the page you were looking for.
-        +button(href='/') Return to homepage
+block content-copy
+  h1.heading Page not found
+  p &ldquo;I don't have time to explain why I don't have time to explain.&rdquo;
+  +button(href='/') Return to homepage

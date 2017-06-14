@@ -7,9 +7,14 @@
 , "code-of-conduct":
   { "title": "Code of Conduct - Avalanche UK"
   }
+, "error":
+  { "title": "Error encountered - Avalanche UK"
   }
 , "index":
   { "title": "Avalanche UK | Destiny clan on Xbox One"
+  }
+, "maintenance":
+  { "title": "Offline for maintenance - Avalanche UK"
   }
 , "slackin":
   { "title": "Join us on Slack - Avalanche UK"
