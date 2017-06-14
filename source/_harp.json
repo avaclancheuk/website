@@ -14,6 +14,7 @@
     , { "disabled": true, "name": "Ace Eyed Ace", "label": "YouTube", "url": "https://www.youtube.com/user/aceeyedace" }
     , { "name": "mbeard", "label": "Twitch", "url": "https://www.twitch.tv/mbeard7" }
     , { "name": "LlordFlashheart", "label": "Twitch", "url": "https://www.twitch.tv/llordflashheart" }
+    , { "name": "Microthrix", "label": "Twitch", "url": "https://www.twitch.tv/microthrix" }
     ]
   , "emblems":
     [ { "name": "Glass and Time", "image": "https://www.bungie.net/common/destiny_content/icons/9979961d2e5409df64131f2b092b7007.jpg" }
