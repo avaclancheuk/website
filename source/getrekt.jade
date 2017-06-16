@@ -1,0 +1,21 @@
+extends _templates/default
+
+block header
+
+block append stylus
+  include:stylus(compress=true) css/_getrekt.styl
+
+block content
+  .grid.grid--gutterless.grid--full-height
+    .grid__item.one-half-height
+      a.promo(href='http://avaclancheuk.spreadshirt.co.uk/-A111921547')
+        .promo__image
+          img(src='/img/hardcore-casual.png', alt='')
+    .grid__item.one-half-height
+      a.promo(href='http://avaclancheuk.spreadshirt.co.uk/-A111921525')
+        .promo__image
+          img(src='/img/laidback-diehard.png', alt='')
+
+  .getrekt__overlay
+
+block footer

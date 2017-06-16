@@ -1,0 +1,69 @@
+$color--jet-black = #000
+$color--black = #222
+
+.getrekt
+  &, body, [role='main']
+    height 100%
+
+.getrekt__overlay
+  $angle = 55deg
+  $height = 5vmin
+  $width = (($height / sin($angle)) * sin(90 - $angle))
+  $border-color = $color--jet-black
+  $background-color = $color--black
+
+  background linear-gradient((180 - $angle), $border-color 25%, transparent 25%)
+    , linear-gradient((180 + $angle), $border-color 25%, transparent 25%)
+    , linear-gradient((360 - $angle), $border-color 25%, transparent 25%)
+    , linear-gradient($angle, $border-color 25%, transparent 25%), $background-color
+  background-position ($width * -1) 0, ($width * -1) 0, 0 0, 0 0
+  background-size ($width * 2) ($height * 2)
+
+  opacity 0.75
+  position absolute
+  height 100%
+  width 100%
+  top 0
+  left 0
+  z-index -1
+
+.grid--full-height
+  height 100%
+
+.one-half-height
+  height 50%
+
+.promo
+  display block
+  height 100%
+  opacity 0.4
+  position relative
+  transition opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1)
+    , background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &:hover
+  &:focus
+    background $color--jet-black
+    opacity 1
+
+    .promo__image
+      transform scale(1.15)
+
+.promo__image
+  position absolute
+  padding 1em
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index 1
+  transform scale(1)
+  transition transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  img
+    display block
+    margin auto
+    max-height 60%
+    position relative
+    top 50%
+    transform translateY(-50%)

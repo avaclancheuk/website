@@ -10,6 +10,10 @@
 , "error":
   { "title": "Error encountered - Avalanche UK"
   }
+, "getrekt":
+  { "title": "Choose your side | Avalanche UK + GetRekt 2"
+  , "htmlClass": "getrekt"
+  }
 , "index":
   { "title": "Avalanche UK | Destiny clan on Xbox One"
   }
