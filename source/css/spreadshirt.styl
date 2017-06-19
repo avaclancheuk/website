@@ -18,7 +18,6 @@ body
 
 #sprd-header
   {$gradient}
-  background-attachment fixed
   margin-bottom -5em
   max-width none
   padding 3em 2em 6em
@@ -64,7 +63,8 @@ body
   background-color $color--blue
   border-color transparent
 
-  html:not(.sprd-touch) &:hover
+  html:not(.sprd-touch)&:hover
+  &:active
     background-color $color--turquoise
 
 .sprd-Item picture
