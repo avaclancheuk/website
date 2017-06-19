@@ -14,16 +14,15 @@
   $height = 5vmin
   $width = (($height / sin($angle)) * sin(90 - $angle))
   $border-color = $color--jet-black
-  $background-color = $color--black
+  $background-color = shade($color--black, 25%)
 
   background linear-gradient((180 - $angle), $border-color 25%, transparent 25%)
     , linear-gradient((180 + $angle), $border-color 25%, transparent 25%)
     , linear-gradient((360 - $angle), $border-color 25%, transparent 25%)
     , linear-gradient($angle, $border-color 25%, transparent 25%), $background-color
-  background-position ($width * -1) 50%, ($width * -1) 50%, 0 50%, 0 50%
+  background-position ($width * -1) 0, ($width * -1) 0, 0 0, 0 0
   background-size ($width * 2) ($height * 2)
 
-  opacity 0.75
   position absolute
   height 100%
   width 100%
