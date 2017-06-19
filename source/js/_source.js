@@ -23,3 +23,12 @@ $('[data-scroll]').click(function (e) {
     scrollTo($target)
   }
 })
+
+$('.touchevents [data-promo]').click(function (e) {
+  var href = $(this).attr('href')
+  e.preventDefault()
+
+  setTimeout(function () {
+    window.location = href
+  }, 1000)
+})

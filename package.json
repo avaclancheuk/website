@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build:js": "browserify ./source/js/_source.js | uglifyjs > ./source/js/output.js",
-    "start": "pliers go -o",
+    "start": "pliers go",
     "deploy": "bash ./deploy.sh",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "lintJs": "eslint --cache -f unix .",
