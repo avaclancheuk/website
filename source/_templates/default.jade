@@ -43,13 +43,13 @@ html.no-js(lang='en', class=htmlClass)
 
     block header
       mixin link(text)
-        a.header__link(data-wipe=text)&attributes(attributes)= text
+        a.header__link(data-wipe=text, target='_top')&attributes(attributes)= text
 
       .header(role='banner', data-scroll-offset)
         .container
           .grid.grid--gutterless.grid--valign-middle
             .grid__item.logo__grid--fixed
-              a.logo.brand-gradient(href='/', title='Home')
+              a.logo.brand-gradient(href='/', title='Home', target='_top')
                 .logo__container
                   include /img/logo.svg
                   .is-vhidden Avalanche UK
@@ -67,27 +67,27 @@ html.no-js(lang='en', class=htmlClass)
         .container
           .grid.grid--gutterless
             .grid__item.fablet-one-half.desktop-one-quarter
-              a.footer__logo.logo.logo--tag(href='/#top', title='Back to top', data-scroll)
+              a.footer__logo.logo.logo--tag(href='/#top', title='Back to top', target='_top', data-scroll)
                 .logo__container
                   include /img/logo__tag.svg
                   .is-vhidden Avalanche UK
             .grid__item.fablet-one-half.desktop-one-quarter
               .footer__content
                 h2.footer__heading Follow us
-                a.footer__link(href='https://www.twitch.tv/avaclancheuk') Twitch
-                a.footer__link(href='https://www.youtube.com/avaclancheuk') YouTube
-                a.footer__link(href='https://twitter.com/avaclancheuk') Twitter
-                a.footer__link(href='https://www.facebook.com/avaclancheuk') Facebook
-                a.footer__link(href='https://plus.google.com/+avaclancheuk') Google+
-                a.footer__link(href='https://www.instagram.com/avaclancheuk/') Instagram
+                a.footer__link(href='https://www.twitch.tv/avaclancheuk', target='_top') Twitch
+                a.footer__link(href='https://www.youtube.com/avaclancheuk', target='_top') YouTube
+                a.footer__link(href='https://twitter.com/avaclancheuk', target='_top') Twitter
+                a.footer__link(href='https://www.facebook.com/avaclancheuk', target='_top') Facebook
+                a.footer__link(href='https://plus.google.com/+avaclancheuk', target='_top') Google+
+                a.footer__link(href='https://www.instagram.com/avaclancheuk/', target='_top') Instagram
             .grid__item.desktop-one-half
               .footer__content
                 .footer__heading.footer__heading--alt &nbsp;
                 - var date = new Date()
                 p &copy; #{date.getFullYear()} Avalanche UK
-                a.footer__link(href='/code-of-conduct') Code of Conduct
-                a.footer__link(href='http://www.destiny-daily.com') Destiny Daily
-                a.footer__link(href='https://www.guardianoutfitter.com') Guardian Outfitter
+                a.footer__link(href='/code-of-conduct', target='_top') Code of Conduct
+                a.footer__link(href='http://www.destiny-daily.com', target='_top') Destiny Daily
+                a.footer__link(href='https://www.guardianoutfitter.com', target='_top') Guardian Outfitter
 
     block scripts
       script(src='/js/output.js', defer, async)
