@@ -31,18 +31,16 @@ $triangles =
     , linear-gradient($border-color, transparent 1px, transparent 50%, $border-color 50%, transparent calc(50% + 1px)), $background-color
   background-size $width $height
 
-$zigzag =
+$zigzag($top = 0, $border-color = $color--white, $background-color = transparent)
   $angle = 55deg
   $height = 2.5em
   $width = (($height / sin($angle)) * sin(90 - $angle))
-  $border-color = $color--white
-  $background-color = transparent
 
   background linear-gradient((180 - $angle), $border-color 25%, transparent 25%)
     , linear-gradient((180 + $angle), $border-color 25%, transparent 25%)
     , linear-gradient((360 - $angle), $border-color 25%, transparent 25%)
     , linear-gradient($angle, $border-color 25%, transparent 25%), $background-color
-  background-position ($width * -1) 0, ($width * -1) 0, 0 0, 0 0
+  background-position ($width * -1) $top, ($width * -1) $top, 0 $top, 0 $top
   background-size ($width * 2) ($height * 2)
   height 100%
   position relative
