@@ -5,7 +5,7 @@
   , "src": "source"
   , "dest": "docs"
   , "streamers":
-    [ { "name": "ALastBoyScout", "label": "Twitch", "url": "https://www.twitch.tv/alastboyscout" }
+    [ { "disabled": true, "name": "ALastBoyScout", "label": "Twitch", "url": "https://www.twitch.tv/alastboyscout" }
     , { "name": "Diamond Duck", "label": "Twitch", "url": "https://www.twitch.tv/paultjohnson3" }
     , { "name": "Kaiser1977", "label": "Twitch", "url": "https://www.twitch.tv/kaizer1977" }
     , { "disabled": true, "name": "vG Stryker", "label": "YouTube", "url": "https://www.youtube.com/user/13hulmey" }
