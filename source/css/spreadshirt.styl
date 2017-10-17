@@ -143,6 +143,9 @@ body
   padding 0 !important
   border 0 !important
 
+  svg
+    display none !important
+
   &:before
     content ''
     display inline-block
@@ -154,6 +157,7 @@ body
 
   &:after
     content 'Merch'
+    font-family $font--base
 
     +width-min($mq--fablet)
       content 'Merchandise'
