@@ -62,7 +62,7 @@ block content
                     p.member__label
                       span.member__detail!= streamer.label || '&nbsp;'
 
-  .content.brand-transparent.brand-destiny-daily.brand-fixed
+  //- .content.brand-transparent.brand-destiny-daily.brand-fixed
     .container
       .site-introduction
         p.svg-logo
@@ -70,10 +70,26 @@ block content
         p We run the only website you'll ever need to visit to see all the Daily and Weekly activities Destiny has to offer.
         +button(href='http://www.destiny-daily.com', target='_top') Visit Destiny Daily
 
-  .textblock.textblock--auto.brand-transparent.brand-guardian-outfitter.brand-fixed
+  //- .textblock.textblock--auto.brand-transparent.brand-guardian-outfitter.brand-fixed
     .textblock__content.container
       p.svg-logo
         include img/logo--guardian-outfitter.svg
       h2.heading Guardian Outfitter
       p We also help the Guardian-around-town keep track of all those Emblems, Shader, Ships, and Sparrows, that are missing from their collections.
       +button(href='https://www.guardianoutfitter.com', target='_top') Visit Guardian Outfitter
+
+  .content.brand-transparent.brand-destiny-clan-warfare.brand-fixed
+    .container
+      .site-introduction
+        p.svg-logo
+          include img/logo--destiny-clan-warfare.svg
+        p #[strong Destiny Clan Warfare] is the ultimate website for clan battles &amp; competition in Destiny 2. Wage war against other clans and battle your way to the top of the Destiny 2 clan leaderboard.
+        +button(href='https://destinyclanwarfare.com', target='_top') Visit Destiny Clan Warfare
+
+  .textblock.textblock--auto.brand-transparent.brand-destiny-daily.brand-fixed
+    .textblock__content.container
+      p.svg-logo
+        include img/logo--destiny-daily.svg
+      h2.heading Destiny Daily
+      p We also run the only website you'll ever need to visit to see all the Daily and Weekly activities Destiny has to offer.
+      +button(href='http://www.destiny-daily.com', target='_top') Visit Destiny Daily

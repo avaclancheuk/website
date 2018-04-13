@@ -367,11 +367,12 @@ $vhidden =
     z-index 2
 
 .brand-transparent
+  background-size cover
   color $color--white
   position relative
 
   &:before
-    background rgba($color--graphite, 0.75)
+    background rgba($color--graphite, 0.5)
     content ''
     position absolute
     top 0
@@ -383,6 +384,10 @@ $vhidden =
   .container
     position relative
     z-index 2
+
+.brand-destiny-clan-warfare
+  background-image url('/img/destiny-clan-warfare.jpg')
+  background-position 50% 50%
 
 .brand-destiny-daily
   background-image url('/img/destiny-daily.jpg')
