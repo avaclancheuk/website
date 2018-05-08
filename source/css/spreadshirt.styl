@@ -12,245 +12,253 @@ body
   font 112.5%/1.5 $font--base
   -webkit-font-smoothing antialiased
 
-.SprdMain
+#sprd-main
+.sprd-trusted-footer
   background-color transparent
-  max-width none
 
-#sprd-header
+#sprd-header-container
   {$gradient}
-  margin-bottom -5em
-  max-width none
   padding 3em 2em 6em
-  position static
   text-align center
 
   +width-min($mq--fablet)
     padding-top 6em
 
-.sprd-Tile.sprd-article
-#department-filter
-#filterBar
-#footer
-.sprd-productDetails
-.sprd-goToListPage
-.sprd-footer
+#sprd-department-filter
+.sprd-listpage__header
+.sprd-custom-footer
+.sprd-service-footer
+.sprd-info-footer
+.sprd-trusted-footer__satisfaction
+.sprd-appearance-list--listpage
+.sprd-product-list-item__sizes
+.sprd-breadcrumb
+.sprd-detail-product-type
+.sprd-detail-design-details
   display none !important
 
-// Show products
-#article_107575873
-#article_107575871
-#article_107443592
-#article_107443587
-#article_107443581
-#article_107443575
-#article_107419993
-#article_107420015
-#article_107419914
-#article_107419904
-#article_111961246
-#article_111961251
-  display inline-block !important
+.sprd-listpage
+  padding 0 !important
 
-#articleListWrapper
-  margin-bottom 0 !important
-  top 0 !important
-
-.customHighlight
-  border-color $color--grey !important
-
-.SprdMain
-.sprd-price
-#startpageButton:before
-#startpageButton:after
-  font-family $font--base !important
-
-.customButton.sprd-primary
-  background-color $color--blue
-  border-color transparent
-
-  &:active
-  html:not(.sprd-touch) &:hover
-    background-color $color--turquoise
-
-.sprd-Item picture
-  border-color $color--grey !important
-
-.sprd-Item.sprd-active picture
-.customNotification
-  border-color $color--purple !important
-
-.customCounter
-.customNotification
-.customNotification:before
-  background-color $color--purple
-
-.sprd-zoomed-over .sprd-TileOverlay
-  display none !important
-
-.SprdContent
-  background-color transparent
+.sprd-product-list
   margin auto
   max-width 70em
   padding 0 1em 1em
 
-  +width-min($mq--tablet)
-    padding 0 2em 2em
-
-.sprd-articles
-  padding 0 !important
-
-  .sprd-label
-    display none !important
-
-.sprd-article
+.sprd-product-list-item
   background-color $color--white
-  border 1px solid $color--grey
+  border-color $color--grey !important
+  margin 0 !important
   padding 1em !important
-  transition none !important
-
-.sprd-squareSize
-  display block !important
-
-.SprdMain .sprd-Tile.sprd-article
-  width 100%
-
-  +width-min($mq--fablet)
-    width 50%
-
-.SprdMain .sprd-TileList.sprd-articles
-  top 0 !important
-  margin-bottom 0 !important
-
-.sprd-navigation
-  display block !important
-  border-bottom 0 !important
-  height auto !important
-  margin auto
-  max-width 70em
-
-#mainNav
-  position absolute !important
-  right 0 !important
-  top -25px !important
-
-#startpageButton
-#startPageButton
-  color $color--white
-  font-size 1.25em
-  font-weight bold
-  line-height 1 !important
-  margin 0.8em 0 0.8em -1.75em !important
-  padding 0 !important
-  border 0 !important
-
-  svg
-    display none !important
-
-  &:before
-    content ''
-    display inline-block
-    background currentColor
-    margin-right 0.5em
-    height 1px
-    width 1.25em
-    vertical-align middle
-
-  &:after
-    content 'Merch'
-    font-family $font--base
-
-    +width-min($mq--fablet)
-      content 'Merchandise'
-
-#basketButton
-  border 0
-  color $color--white
-  line-height 62px
-  margin 0
-  padding 0
-
-.sprd-Wrapper
-  background $color--white
-
-.sprd-productView
-  overflow hidden
-  padding 0 1em !important
-
-#detail-header
-  padding 1em 1em 0 !important
-  font-family $font--brand
-  font-size 1em !important
-  text-align left
-
-  .sprd-headline
-    display inline-block
-    font-size 2em !important
-    margin 0 auto
-    text-align left
-
-.sprd-overlayView
-  top 85px !important
-
-  header
-    font-size 1.25em !important
-    font-weight bold
-    padding 1em 0.5em !important
-
-.sprd-Loader
-  margin auto
-  max-width 70em
-  width auto !important
-  left 1em !important
-  right 1em !important
 
   +width-min($mq--tablet)
-    left 2em !important
-    right 2em !important
+    width 33.333% !important
 
-.sprd-dropdowns
-.sprd-buttons
-.sprd-productViews
-  background-color transparent !important
+.sprd-product-list-item--hover
+  box-shadow none !important
 
-.sprd-buyingBlock .sprd-Price
-  white-space normal !important
-  line-height 1.1
+// .SprdMain
+//   background-color transparent
+//   max-width none
 
-.SprdMain .sprd-Carousel:not(.sprd-vertical) .sprd-NavigationButton.sprd-forward
-  right 85px
+// #sprd-header
+//   margin-bottom -5em
+//   position static
 
-.sprd-Carousel
-  background none
-  margin-bottom 1em !important
+// #articleListWrapper
+//   margin-bottom 0 !important
+//   top 0 !important
 
-.sprd-productViews
-  text-align left !important
+// .customHighlight
+//   border-color $color--grey !important
 
-.sprd-DetailBox
-.sprd-Wrapper.sprd-details
-  padding 0 !important
+// .SprdMain
+// .sprd-price
+// #startpageButton:before
+// #startpageButton:after
+//   font-family $font--base !important
 
-.sprd-ptName.sprd-mobileOnly
-  opacity 0
+// .customButton.sprd-primary
+//   background-color $color--blue
+//   border-color transparent
 
-.sprd-close
-  line-height 1
+//   &:active
+//   html:not(.sprd-touch) &:hover
+//     background-color $color--turquoise
 
-.sprd-itemView.sprd-basket
-  font-size 1em
-  max-width 70em !important
+// .sprd-Item picture
+//   border-color $color--grey !important
 
-  header
-    padding 0.5em 0.5em 0 !important
-    font-family $font--brand
-    font-size 2em !important
-    text-align left
+// .sprd-Item.sprd-active picture
+// .customNotification
+//   border-color $color--purple !important
 
-.SprdMain.SprdClassEdit .SprdContent
-  font-size 1em
+// .customCounter
+// .customNotification
+// .customNotification:before
+//   background-color $color--purple
 
-.sprd-noItems
-  padding-bottom 2em !important
+// .sprd-zoomed-over .sprd-TileOverlay
+//   display none !important
+
+// .SprdContent
+//   background-color transparent
+//   margin auto
+//   max-width 70em
+//   padding 0 1em 1em
+
+//   +width-min($mq--tablet)
+//     padding 0 2em 2em
+
+// .sprd-articles
+//   padding 0 !important
+
+//   .sprd-label
+//     display none !important
+
+// .sprd-squareSize
+//   display block !important
+
+// .SprdMain .sprd-Tile.sprd-article
+//   width 100%
+
+//   +width-min($mq--fablet)
+//     width 50%
+
+// .SprdMain .sprd-TileList.sprd-articles
+//   top 0 !important
+//   margin-bottom 0 !important
+
+// .sprd-navigation
+//   display block !important
+//   border-bottom 0 !important
+//   height auto !important
+//   margin auto
+//   max-width 70em
+
+// #mainNav
+//   position absolute !important
+//   right 0 !important
+//   top -25px !important
+
+// #startpageButton
+// #startPageButton
+//   color $color--white
+//   font-size 1.25em
+//   font-weight bold
+//   line-height 1 !important
+//   margin 0.8em 0 0.8em -1.75em !important
+//   padding 0 !important
+//   border 0 !important
+
+//   svg
+//     display none !important
+
+//   &:before
+//     content ''
+//     display inline-block
+//     background currentColor
+//     margin-right 0.5em
+//     height 1px
+//     width 1.25em
+//     vertical-align middle
+
+//   &:after
+//     content 'Merch'
+//     font-family $font--base
+
+//     +width-min($mq--fablet)
+//       content 'Merchandise'
+
+// #basketButton
+//   border 0
+//   color $color--white
+//   line-height 62px
+//   margin 0
+//   padding 0
+
+// .sprd-Wrapper
+//   background $color--white
+
+// .sprd-productView
+//   overflow hidden
+//   padding 0 1em !important
+
+// #detail-header
+//   padding 1em 1em 0 !important
+//   font-family $font--brand
+//   font-size 1em !important
+//   text-align left
+
+//   .sprd-headline
+//     display inline-block
+//     font-size 2em !important
+//     margin 0 auto
+//     text-align left
+
+// .sprd-overlayView
+//   top 85px !important
+
+//   header
+//     font-size 1.25em !important
+//     font-weight bold
+//     padding 1em 0.5em !important
+
+// .sprd-Loader
+//   margin auto
+//   max-width 70em
+//   width auto !important
+//   left 1em !important
+//   right 1em !important
+
+//   +width-min($mq--tablet)
+//     left 2em !important
+//     right 2em !important
+
+// .sprd-dropdowns
+// .sprd-buttons
+// .sprd-productViews
+//   background-color transparent !important
+
+// .sprd-buyingBlock .sprd-Price
+//   white-space normal !important
+//   line-height 1.1
+
+// .SprdMain .sprd-Carousel:not(.sprd-vertical) .sprd-NavigationButton.sprd-forward
+//   right 85px
+
+// .sprd-Carousel
+//   background none
+//   margin-bottom 1em !important
+
+// .sprd-productViews
+//   text-align left !important
+
+// .sprd-DetailBox
+// .sprd-Wrapper.sprd-details
+//   padding 0 !important
+
+// .sprd-ptName.sprd-mobileOnly
+//   opacity 0
+
+// .sprd-close
+//   line-height 1
+
+// .sprd-itemView.sprd-basket
+//   font-size 1em
+//   max-width 70em !important
+
+//   header
+//     padding 0.5em 0.5em 0 !important
+//     font-family $font--brand
+//     font-size 2em !important
+//     text-align left
+
+// .SprdMain.SprdClassEdit .SprdContent
+//   font-size 1em
+
+// .sprd-noItems
+//   padding-bottom 2em !important
 
 // @stylint on
 
