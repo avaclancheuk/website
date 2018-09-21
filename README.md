@@ -7,6 +7,7 @@
 ```
 git clone git@github.com:avaclancheuk/website.git
 cd website
+nave auto
 npm install
 npm start
 ```
