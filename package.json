@@ -4,6 +4,10 @@
   "author": "Avalanche UK <admins@avaclanche.uk>",
   "license": "ISC",
   "private": true,
+  "engines": {
+    "node": "^4.8.0",
+    "npm": "^2.15.11"
+  },
   "scripts": {
     "build:js": "browserify ./source/js/_source.js | uglifyjs > ./source/js/output.js",
     "start": "pliers go",
