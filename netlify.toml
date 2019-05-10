@@ -4,3 +4,7 @@ ID = "avaclancheuk"
 [build]
   publish = "docs"
   command = "npm run build"
+
+[build.environment]
+  RUBY_VERSION = "2.6.2"
+  GO_VERSION = "1.12"
