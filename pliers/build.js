@@ -6,6 +6,7 @@ function createTask (pliers) {
     , 'buildFavicon'
     , 'buildModernizr'
     , 'buildHtml'
+    , 'buildRedirects'
     )
 
 }
