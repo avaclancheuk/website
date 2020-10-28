@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "david": "^7.0.1",
-    "eslint": "^6.5.1",
+    "eslint": "^2.1.0",
     "eslint-config-clock": "^1.1.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
