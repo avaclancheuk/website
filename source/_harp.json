@@ -6,16 +6,26 @@
   , "dest": "docs"
   , "streamers":
     [ { "disabled": true, "name": "ALastBoyScout", "label": "Twitch", "url": "https://www.twitch.tv/alastboyscout" }
-    , { "name": "Diamond Duck", "label": "Twitch", "url": "https://www.twitch.tv/di4mondduck" }
-    , { "name": "Kaiser1977", "label": "Twitch", "url": "https://www.twitch.tv/kaizer1977" }
+    , { "disabled": true, "name": "Diamond Duck", "label": "Twitch", "url": "https://www.twitch.tv/di4mondduck" }
+    , { "disabled": true, "name": "Kaiser1977", "label": "Twitch", "url": "https://www.twitch.tv/kaizer1977" }
     , { "disabled": true, "name": "vG Stryker", "label": "YouTube", "url": "https://www.youtube.com/user/13hulmey" }
-    , { "name": "wittgenstoned", "label": "Twitch", "url": "https://www.twitch.tv/wittgenstoned" }
+    , { "disabled": true, "name": "wittgenstoned", "label": "Twitch", "url": "https://www.twitch.tv/wittgenstoned" }
     , { "disabled": true, "name": "benedfit", "label": "Twitch", "url": "https://www.twitch.tv/benedfit" }
     , { "disabled": true, "name": "Ace Eyed Ace", "label": "YouTube", "url": "https://www.youtube.com/user/aceeyedace" }
     , { "name": "mbeard", "label": "Twitch", "url": "https://www.twitch.tv/mbeard7" }
-    , { "name": "LlordFlashheart", "label": "Twitch", "url": "https://www.twitch.tv/llordflashheart" }
-    , { "name": "Microthrix", "label": "Twitch", "url": "https://www.twitch.tv/microthrix" }
-    , { "name": "zapsaysno", "label": "Twitch", "url": "https://www.twitch.tv/zapsaysno" }
+    , { "disabled": true, "name": "LlordFlashheart", "label": "Twitch", "url": "https://www.twitch.tv/llordflashheart" }
+    , { "disabled": true, "name": "Microthrix", "label": "Twitch", "url": "https://www.twitch.tv/microthrix" }
+    , { "disabled": true, "name": "zapsaysno", "label": "Twitch", "url": "https://www.twitch.tv/zapsaysno" }
+    , { "name": "Jd", "label": "Twitch", "url": "https://www.twitch.tv/jdkater8" }
+    , { "name": "Super Oafy Advice", "label": "Twitch", "url": "https://www.twitch.tv/superoafyadvice" }
+    , { "name": "batgaz", "label": "Twitch", "url": "https://www.twitch.tv/batgaz" }
+    , { "name": "pedrosbanioles", "label": "Twitch", "url": "https://www.twitch.tv/pedrosbanioles" }
+    , { "name": "kolonel_kahlua", "label": "Twitch", "url": "https://www.twitch.tv/kolonel_kahlua" }
+    , { "name": "davetb2", "label": "Twitch", "url": "https://www.twitch.tv/davetb2" }
+    , { "name": "gummdrops", "label": "Twitch", "url": "https://www.twitch.tv/gummdrops" }
+    , { "name": "BluRover", "label": "Twitch", "url": "https://www.twitch.tv/BluRover" }
+    , { "name": "sirjamiecl", "label": "Twitch", "url": "https://www.twitch.tv/sirjamiecl" }
+    , { "name": "GkWindfall", "label": "Twitch", "url": "https://www.twitch.tv/GkWindfall" }
     ]
   , "emblems":
     [ { "name": "Glass and Time", "image": "https://www.bungie.net/common/destiny_content/icons/9979961d2e5409df64131f2b092b7007.jpg" }
