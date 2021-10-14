@@ -3,7 +3,7 @@ module.exports = createTask
 function createTask (pliers) {
 
   pliers('build'
-    , 'buildFavicon'
+    // , 'buildFavicon'
     , 'buildModernizr'
     , 'buildHtml'
     , 'buildRedirects'
