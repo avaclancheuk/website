@@ -23,9 +23,9 @@
     , { "name": "kolonel_kahlua", "label": "Twitch", "url": "https://www.twitch.tv/kolonel_kahlua" }
     , { "name": "davetb2", "label": "Twitch", "url": "https://www.twitch.tv/davetb2" }
     , { "name": "gummdrops", "label": "Twitch", "url": "https://www.twitch.tv/gummdrops" }
-    , { "name": "BluRover", "label": "Twitch", "url": "https://www.twitch.tv/BluRover" }
+    , { "disabled": true, "name": "BluRover", "label": "Twitch", "url": "https://www.twitch.tv/BluRover" }
     , { "name": "sirjamiecl", "label": "Twitch", "url": "https://www.twitch.tv/sirjamiecl" }
-    , { "name": "GkWindfall", "label": "Twitch", "url": "https://www.twitch.tv/GkWindfall" }
+    , { "disabled": true, "name": "GkWindfall", "label": "Twitch", "url": "https://www.twitch.tv/GkWindfall" }
     ]
   , "emblems":
     [ { "name": "Glass and Time", "image": "https://www.bungie.net/common/destiny_content/icons/9979961d2e5409df64131f2b092b7007.jpg" }
