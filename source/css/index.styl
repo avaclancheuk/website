@@ -4,28 +4,21 @@
 @import '_settings'
 @import '_font'
 
-/* stylinpug whitelist: {grid,grid__item} */
 grid-base()
 
-/* stylinpug whitelist: grid--reverse */
 grid-reverse()
 
-/* stylinpug whitelist: grid--gutterless */
 grid-gutter-modifier('gutterless', 0)
 
-/* stylinpug whitelist: one-half */
 grid-widths('', 2)
 
 +width-min($mq--fablet)
-  /* stylinpug whitelist: fablet-one-half */
   grid-widths('fablet', 2)
 
 +width-min($mq--tablet)
-  /* stylinpug whitelist: {tablet-one-half,tablet-*-quarter*} */
   grid-widths('tablet', 2 4)
 
 +width-min($mq--desktop)
-  /* stylinpug whitelist: {desktop-one-half,desktop-*-quarter*} */
   grid-widths('desktop', 2 4)
 
 .grid--align-center

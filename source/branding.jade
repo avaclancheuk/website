@@ -20,10 +20,8 @@ block content
   .grid.grid--gutterless
     while n < 12
       - n++
-      //- stylinpug whitelist: brand--*
       .grid__item.one-half.brand(class='brand--' + n)
         .brand__container
-          //- stylinpug whitelist: {fill,stroke}
           include img/logo.svg
 
 block footer
