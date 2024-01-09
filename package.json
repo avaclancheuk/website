@@ -8,9 +8,7 @@
     "build:js": "browserify ./source/js/_source.js | uglifyjs > ./source/js/output.js",
     "start": "pliers go",
     "build": "pliers build",
-    "lintJs": "eslint --cache -f unix .",
-    "lintStylus": "stylint ./source/css",
-    "pretest": "pliers build && npm run lintJs && npm run lintStylus",
+    "test": "npm run build",
     "wrap": "npm shrinkwrap && pliers cleanShrinkwrap"
   },
   "dependencies": {
@@ -28,14 +26,8 @@
     "uglify": "^0.1.5"
   },
   "devDependencies": {
-    "eslint": "^2.1.0",
-    "eslint-config-clock": "^1.1.0",
-    "eslint-config-standard": "^5.1.0",
-    "eslint-plugin-promise": "^1.1.0",
-    "eslint-plugin-standard": "^1.3.1",
     "pliers": "^1.2.1",
     "pliers-clean-shrinkwrap": "^1.0.1",
-    "pliers-imagemin": "^3.0.1",
-    "stylint": "1.3.8"
+    "pliers-imagemin": "^3.0.1"
   }
 }

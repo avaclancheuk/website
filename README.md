@@ -1,7 +1,5 @@
 # https://avaclanche.uk/
 
-[![build status](https://img.shields.io/travis/avaclancheuk/website/master.svg)](https://travis-ci.org/avaclancheuk/website)
-
 ## Installation
 
 ```
