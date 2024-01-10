@@ -27,4 +27,7 @@
   { "title": "Join us on Slack - Avalanche UK"
   , "bodyClass": "brand-triangles brand-fixed has-static-header"
   }
+, "ava-aid":
+  { "title": "Ava Aid - Avalanche UK"
+  }
 }
