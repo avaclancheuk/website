@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "pliers": "^1.2.1",
-    "pliers-clean-shrinkwrap": "^1.0.1",
-    "pliers-imagemin": "^3.0.1"
+    "pliers-clean-shrinkwrap": "^1.0.1"
   }
 }
